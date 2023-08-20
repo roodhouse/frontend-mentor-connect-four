@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from './homeScreen/Logo'
 import VsCPU from './homeScreen/VsCPU'
 import TwoPlayer from './homeScreen/TwoPlayer'
-import GameRules from './GameRules'
+import GameRules from './homeScreen/GameRules'
 
 function HomeScreen() {
   return (
