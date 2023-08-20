@@ -8,11 +8,11 @@ function HomeScreen() {
   return (
     <>
         <div id="homeScreenContainer">
-            <div id="logoWrapper">
+            <div id="logoWrapper" className='mb-[79px]'>
                 <Logo />
             </div>
             <div id="cpuWrapper">
-                {/* <VsCPU /> */}
+                <VsCPU />
             </div>
             <div id="twoPlayerWrapper">
                 {/* <TwoPlayer /> */}
