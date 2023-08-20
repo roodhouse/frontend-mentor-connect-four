@@ -14,7 +14,7 @@ function HomeScreen() {
             <div id="cpuWrapper" className='mb-[30px]'>
                 <VsCPU />
             </div>
-            <div id="twoPlayerWrapper">
+            <div id="twoPlayerWrapper" className='mb-[30px]'>
                 <TwoPlayer />
             </div>
             <div id="gameRulesWrapper">
