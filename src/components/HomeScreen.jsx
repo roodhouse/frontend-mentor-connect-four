@@ -7,15 +7,15 @@ import GameRules from './GameRules'
 function HomeScreen() {
   return (
     <>
-        <div id="homeScreenContainer">
+        <div id="homeScreenContainer" className='flex flex-col items-center'>
             <div id="logoWrapper" className='mb-[79px]'>
                 <Logo />
             </div>
-            <div id="cpuWrapper">
+            <div id="cpuWrapper" className='mb-[30px]'>
                 <VsCPU />
             </div>
             <div id="twoPlayerWrapper">
-                {/* <TwoPlayer /> */}
+                <TwoPlayer />
             </div>
             <div id="gameRulesWrapper">
                 {/* <GameRules /> */}
