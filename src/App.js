@@ -1,11 +1,16 @@
 import './App.css';
+import HomeScreen from './components/HomeScreen';
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <div id='mainWrapper'>
+        <div id='mainContainer' className='bg-purple h-screen flex justify-center items-center px-5 md:bg-darkPurple'>
+          <div id='homeScreenWrapper'>
+            <HomeScreen />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
