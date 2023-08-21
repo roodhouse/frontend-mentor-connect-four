@@ -2,9 +2,13 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
+import GameOn from './components/GameOn';
 
 
 // 2. game screen
+  // set up vs player screen
+  // set up vs cpu screen
+  // pause screen
 
 function App() {
 
@@ -21,11 +25,14 @@ function App() {
     <div className="App">
       <div id='mainWrapper'>
         <div id='mainContainer' className='bg-purple md:bg-darkPurple h-screen flex justify-center items-center px-5'>
-          <div id='homeScreenWrapper' className=''>
+          <div id='homeScreenWrapper' className='hidden'>
             <HomeScreen />
           </div>
           <div id='rulesScreenWrapper' className='hidden w-full max-w-[480px]'>
             <RulesScreen displayHome={displayHome} />
+          </div>
+          <div id='gameOnWrapper' className='w-full'>
+            <GameOn />
           </div>
         </div>
       </div>
