@@ -1,7 +1,6 @@
 import React from 'react'
 import PlayerOne from './playerCard/PlayerOne'
 import PlayerTwo from './playerCard/PlayerTwo'
-import PlayerCpu from './playerCard/PlayerCpu'
 
 function PlayerCard() {
   return (
