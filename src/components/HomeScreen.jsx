@@ -8,9 +8,10 @@ function HomeScreen() {
 
     function hideHome() {
         // hide the home screen
-        document.getElementById('homeScreenWrapper').style.display = 'none'
+        document.getElementById('homeScreenWrapper').classList.add('hidden')
         // change the main screen background color
-        document.getElementById('mainContainer').style.backgroundColor = '#7945FF'
+        document.getElementById('mainContainer').classList.remove('bg-purple', 'md:bg-darkPurple')
+        document.getElementById('mainContainer').classList.add('bg-purple') 
     }
 
     const handleRulesClick = (e) => {
