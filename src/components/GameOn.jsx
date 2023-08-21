@@ -9,7 +9,7 @@ function GameOn() {
             <div id="gameOnHeaderWrapper" className='mb-[50px]'>
                 <GameOnHeader />
             </div>
-            <div id="playerCardWrapper">
+            <div id="playerCardWrapper" className='mb-[50px]'>
                 <PlayerCard />
             </div>
         </div>

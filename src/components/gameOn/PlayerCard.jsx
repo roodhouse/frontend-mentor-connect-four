@@ -6,15 +6,12 @@ import PlayerCpu from './playerCard/PlayerCpu'
 function PlayerCard() {
   return (
     <>
-        <div id="playerCardContainer">
-            <div id="playerOneWrapper">
+        <div id="playerCardContainer" className='flex justify-around'>
+            <div id="playerOneWrapper" className='mr-[21px] ml-[15px]'>
                 <PlayerOne />
             </div>
-            <div id="playerTwoWrapper">
+            <div id="playerTwoWrapper" className='mr-[15px]'>
                 <PlayerTwo />
-            </div>
-            <div id="playerCpuWrapper" className='hidden'>
-                <PlayerCpu />
             </div>
         </div>
     </>
