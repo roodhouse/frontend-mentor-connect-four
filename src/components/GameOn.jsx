@@ -5,7 +5,7 @@ function GameOn() {
   return (
     <>
         <div id="gameOnContainer">
-            <div id="gameOnHeaderWrapper">
+            <div id="gameOnHeaderWrapper" className='mb-[50px]'>
                 <GameOnHeader />
             </div>
         </div>

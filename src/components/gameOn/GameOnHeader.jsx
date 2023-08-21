@@ -6,7 +6,7 @@ import Restart from './gameOnHeader/Restart'
 function GameOnHeader() {
   return (
     <>
-        <div id="gameOnHeaderContainer" className='flex'>
+        <div id="gameOnHeaderContainer" className='flex items-center justify-between'>
             <div id="headerMenuButtonWrapper">
                 <Menu />
             </div>
