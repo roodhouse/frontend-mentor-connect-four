@@ -5,7 +5,7 @@ import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
 // 1. need to build grid manaully
-  // white grid
+  // white grid -- continue here
   // black grid
 // 2. game screen
 
