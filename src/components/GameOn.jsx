@@ -2,6 +2,7 @@ import React from 'react'
 import GameOnHeader from './gameOn/GameOnHeader'
 import PlayerCard from './gameOn/PlayerCard'
 import GameGrid from './gameOn/GameGrid'
+import BottomCard from './gameOn/BottomCard'
 
 function GameOn() {
   return (
@@ -15,6 +16,9 @@ function GameOn() {
             </div>
             <div id="gameGridWrapper" className=''>
                 <GameGrid />
+            </div>
+            <div id="bottomCardWrapper" className=''>
+                <BottomCard />
             </div>
         </div>
     </>
