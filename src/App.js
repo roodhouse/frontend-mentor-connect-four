@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <div id='mainWrapper'>
-        <div id='mainContainer' className='bg-purple md:bg-darkPurple h-screen flex justify-center items-center px-5'>
+        <div id='mainContainer' className='bg-purple md:bg-darkPurple h-screen flex justify-center pt-[50px]'>
           <div id='homeScreenWrapper' className='hidden'>
             <HomeScreen />
           </div>

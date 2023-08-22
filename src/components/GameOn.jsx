@@ -8,13 +8,13 @@ function GameOn() {
   return (
     <>
         <div id="gameOnContainer">
-            <div id="gameOnHeaderWrapper" className='mb-[50px]'>
+            <div id="gameOnHeaderWrapper" className='mb-[50px] px-5'>
                 <GameOnHeader />
             </div>
-            <div id="playerCardWrapper" className='mb-[50px]'>
+            <div id="playerCardWrapper" className='mb-[50px] px-[9px]'>
                 <PlayerCard />
             </div>
-            <div id="gameGridWrapper" className=''>
+            <div id="gameGridWrapper" className='px-5'>
                 <GameGrid />
             </div>
             <div id="bottomCardWrapper" className=''>
