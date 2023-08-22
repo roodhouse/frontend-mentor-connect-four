@@ -1,16 +1,17 @@
 import React from 'react'
+import PlayerCard from './bottomCard/PlayerCard'
+import WinCard from './bottomCard/WinCard'
+// need to change the color and text based on whos turn it is
 
 function BottomCard() {
   return (
     <>
-        <div id="bottomCardContainer" className='w-[375px] h-[236px] rounded-[60px_60px_0px_0px] bg-darkPurple flex justify-center'>
-            <div id="bottomCard" className='bg-[url("./assets/images/turn-background-red.svg")] w-[191px] h-[150px] bg-contain bg-no-repeat flex flex-col justify-center items-center'>
-                <div id="bottomPlayerContainer">
-                    <p>PLAYER 1'S TURN</p>
-                </div>
-                <div id="countdown">
-                    <p>15s</p>
-                </div>
+        <div id="bottomCardContainer" className='w-full h-[236px] rounded-[60px_60px_0px_0px] bg-darkPurple flex justify-center relative'>
+            <div id="playerCardWrapper" className='hidden' >
+                <PlayerCard />
+            </div>
+            <div id="winCardWrapper" className='absolute z-50 top-[-20px]'>
+                <WinCard />
             </div>
         </div>
     </>
