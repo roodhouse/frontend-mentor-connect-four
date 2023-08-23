@@ -20,6 +20,9 @@ function GameOn() {
             <div id="bottomCardWrapper" className=''>
                 <BottomCard />
             </div>
+            <div id="pauseMenu" className='h-screen absolute w-full top-0 bg-black opacity-50 z-40'>
+
+            </div>
         </div>
     </>
   )
