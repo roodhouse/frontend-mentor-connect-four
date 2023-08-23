@@ -4,6 +4,7 @@ import BlackCircleContainer from './gameGrid/BlackCircleContainer'
 import CircleContainer from './gameGrid/CircleContainer'
 
 // need to change the gap size?
+// create custom white and black grid based off of grid then adjust piece grid
 
 function GameGrid() {
   return (
@@ -21,8 +22,13 @@ function GameGrid() {
             ))}
           </div> */}
         
-            <div id="whiteLayer" className='w-[335px] h-[310px] bg-[url("./assets/images/board-layer-white-small.svg")] absolute z-20'/>
-            <div id="circleLayerWrapper" className='w-[335px] h-[310px] flex flex-wrap ml-[10px] items-center pt-[1px]'>
+            <div id="whiteLayer" className=' hidden w-[335px] h-[310px] bg-[url("./assets/images/board-layer-white-small.svg")] absolute z-20'/>
+            {/* <div id="circleLayerWrapper" className='w-[335px] h-[310px] flex flex-wrap ml-[10px] items-center pt-[1px]'>
+              {Array.from({ length: 42}).map((_, index) => (
+                <CircleContainer key={index} index={index} />
+              ))}
+            </div> */}
+            <div id="circleLayerWrapper" className='w-[335px] h-[310px] grid grid-cols-7'>
               {Array.from({ length: 42}).map((_, index) => (
                 <CircleContainer key={index} index={index} />
               ))}
