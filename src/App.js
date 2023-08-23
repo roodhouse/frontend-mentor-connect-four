@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.css';
 import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
@@ -6,7 +6,6 @@ import GameOn from './components/GameOn';
 
 
 // 2. game screen
-  // fix win card
 
   // set up vs player screen
   // set up vs cpu screen
