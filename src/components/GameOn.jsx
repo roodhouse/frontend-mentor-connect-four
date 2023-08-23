@@ -17,7 +17,7 @@ function GameOn() {
             <div id="gameGridWrapper" className='px-5'>
                 <GameGrid />
             </div>
-            <div id="bottomCardWrapper" className='hidden'>
+            <div id="bottomCardWrapper" className=''>
                 <BottomCard />
             </div>
         </div>
