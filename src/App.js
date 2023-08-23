@@ -4,10 +4,9 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// 1. need to build grid manaully
-  // white grid -- continue here
-  // black grid
+
 // 2. game screen
+  // fix win card
 
   // set up vs player screen
   // set up vs cpu screen

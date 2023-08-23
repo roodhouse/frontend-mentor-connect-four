@@ -11,7 +11,8 @@ module.exports = {
       darkPurple: '#5C2DD5',
       purple: '#7945FF',
       red: '#FD6687',
-      yellow: '#FFCE67'
+      yellow: '#FFCE67',
+      transparent: 'transparent'
     }
   },
   plugins: [],
