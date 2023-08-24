@@ -4,7 +4,14 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// marker at full screen
+// refactor to use useContext
+// logic
+  // competition
+  // turn
+  // win logic
+    // display circles of 4 pieces that won
+  // marker logic, display when the row is column is clicked
+// 30 sec timer logic
 
 function App() {
 
@@ -23,9 +30,6 @@ function App() {
     document.getElementById('mainContainer').classList.remove('bg-purple', 'md:bg-darkPurple')
     document.getElementById('mainContainer').classList.add('bg-purple') 
 }
-
-  
-
 
   return (
     <div className="App">
