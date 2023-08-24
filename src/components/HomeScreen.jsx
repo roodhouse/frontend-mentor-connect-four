@@ -16,16 +16,18 @@ function HomeScreen({hideHome}) {
     const handleCPUclick = (e) => {
         hideHome()
         document.getElementById('gameOnWrapper').classList.remove('hidden')
-        document.getElementById('mainContainer').classList.add('md:h-full')
+        document.getElementById('gameOnWrapper').classList.add('xl:flex', 'xl:flex-col', 'xl:justify-end')
+        document.getElementById('mainContainer').classList.add('md:h-full', 'xl:h-screen')
     }
 
     const handleTwoClick = (e) => {
         hideHome()
         document.getElementById('gameOnWrapper').classList.remove('hidden')
-        document.getElementById('mainContainer').classList.add('md:h-full')
+        document.getElementById('gameOnWrapper').classList.add('xl:flex', 'xl:flex-col', 'xl:justify-end')
+        document.getElementById('mainContainer').classList.add('md:h-full', 'xl:h-screen')
     }
 
-
+    
   return (
     <>
         <div id="homeScreenContainer" className='flex flex-col items-center md:w-[480px] md:h-[507px] md:pt-[70px] md:pb-[60px] md:justify-around md:bg-purple md:rounded-[40px] md:border-[3px] md:border-black md:shadow-[0px_10px_0px_0px_black]'>
