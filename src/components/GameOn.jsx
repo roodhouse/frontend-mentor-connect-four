@@ -9,10 +9,10 @@ function GameOn() {
   return (
     <>
         <div id="gameOnContainer">
-            <div id="gameOnHeaderWrapper" className='mb-[50px] px-5'>
+            <div id="gameOnHeaderWrapper" className='mb-[50px] px-5 md:mb-8 md:px-0'>
                 <GameOnHeader />
             </div>
-            <div id="playerCardWrapper" className='mb-[50px] px-[9px]'>
+            <div id="playerCardWrapper" className='mb-[50px] px-[9px] md:px-0'>
                 <PlayerCard />
             </div>
             <div id="gameGridWrapper" className='px-5'>

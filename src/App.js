@@ -30,14 +30,14 @@ function App() {
   return (
     <div className="App">
       <div id='mainWrapper' className=''>
-        <div id='mainContainer' className='bg-purple md:bg-darkPurple h-screen flex justify-center pt-[50px]'>
+        <div id='mainContainer' className='bg-purple md:bg-darkPurple h-screen flex justify-center pt-[50px] md:items-center md:pt-0'>
           <div id='homeScreenWrapper' className=''>
             <HomeScreen hideHome={hideHome} />
           </div>
           <div id='rulesScreenWrapper' className='hidden w-full max-w-[480px] px-5'>
             <RulesScreen displayHome={displayHome} />
           </div>
-          <div id='gameOnWrapper' className='hidden w-full max-w-[375px]'>
+          <div id='gameOnWrapper' className='hidden w-full max-w-[375px] md:h-full md:pt-[30px] md:max-w-[632px]'>
             <GameOn />
           </div>
         </div>
