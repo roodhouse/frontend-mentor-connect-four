@@ -23,7 +23,7 @@ function GameOn() {
             <div id="bottomCardWrapper" className=''>
                 <BottomCard />
             </div>
-            <div id="pauseMenuWrapper" className=' flex justify-center'>
+            <div id="pauseMenuWrapper" className='hidden flex justify-center'>
                 <Pause />
             </div>
         </div>
