@@ -4,7 +4,6 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// winner symbols 
 // expand widths
 
 function App() {

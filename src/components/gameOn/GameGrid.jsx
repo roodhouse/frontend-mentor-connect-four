@@ -2,6 +2,7 @@ import React from 'react'
 import WhiteCircleContainer from './gameGrid/WhiteCircleContainer'
 import BlackCircleContainer from './gameGrid/BlackCircleContainer'
 import CircleContainer from './gameGrid/CircleContainer'
+import WinnerCircle from './gameGrid/WinnerCircle'
 
 function GameGrid() {
   return (
@@ -16,6 +17,12 @@ function GameGrid() {
           <div id="circleLayerWrapper" className='w-[335px] h-[310px] grid grid-cols-7 justify-items-center bottom-0 items-center absolute z-30 border-[3px] border-transparent pl-[10px] pr-[10px] pb-8 pt-[10px]'>
               {Array.from({ length: 42}).map((_, index) => (
                 <CircleContainer key={index} index={index} />
+              ))}
+            </div>
+
+            <div id="winnerCircleWrapper" className='w-[335px] h-[310px] grid grid-cols-7 justify-items-center bottom-0 items-center absolute z-30 border-[3px] border-transparent pl-[10px] pr-[10px] pb-8 pt-[10px]'>
+              {Array.from({ length: 42}).map((_, index) => (
+                <WinnerCircle key={index} index={index} />
               ))}
             </div>
 
