@@ -15,7 +15,7 @@ function GameOn() {
             <div id="playerCardWrapper" className='mb-[50px] px-[9px] md:px-0'>
                 <PlayerCard />
             </div>
-            <div id="gameGridWrapper" className='px-5'>
+            <div id="gameGridWrapper" className='px-5 md:p-0'>
                 <GameGrid />
             </div>
             <div id="bottomCardWrapper" className=''>
