@@ -3,8 +3,11 @@ import Logo from './homeScreen/Logo'
 import VsCPU from './homeScreen/VsCPU'
 import TwoPlayer from './homeScreen/TwoPlayer'
 import GameRules from './homeScreen/GameRules'
+import { useDisplayHome } from './DisplayHome'
 
-function HomeScreen({hideHome}) {
+function HomeScreen() {
+
+    const { hideHome } = useDisplayHome()
 
     const handleRulesClick = (e) => {
         // hide the home screen
