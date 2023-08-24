@@ -4,7 +4,7 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// expand widths
+// expand widths -- here
 
 function App() {
 
@@ -14,20 +14,30 @@ function App() {
     // change the main screen background color
     document.getElementById('mainContainer').classList.remove('bg-purple') 
     document.getElementById('mainContainer').classList.add('bg-purple', 'md:bg-darkPurple')
-    
   }
+
+  function hideHome() {
+    // hide the home screen
+    document.getElementById('homeScreenWrapper').classList.add('hidden')
+    // change the main screen background color
+    document.getElementById('mainContainer').classList.remove('bg-purple', 'md:bg-darkPurple')
+    document.getElementById('mainContainer').classList.add('bg-purple') 
+}
+
+  
+
 
   return (
     <div className="App">
-      <div id='mainWrapper'>
+      <div id='mainWrapper' className=''>
         <div id='mainContainer' className='bg-purple md:bg-darkPurple h-screen flex justify-center pt-[50px]'>
-          <div id='homeScreenWrapper' className='hidden'>
-            <HomeScreen />
+          <div id='homeScreenWrapper' className=''>
+            <HomeScreen hideHome={hideHome} />
           </div>
-          <div id='rulesScreenWrapper' className='hidden w-full max-w-[480px]'>
+          <div id='rulesScreenWrapper' className='hidden w-full max-w-[480px] px-5'>
             <RulesScreen displayHome={displayHome} />
           </div>
-          <div id='gameOnWrapper' className='w-full'>
+          <div id='gameOnWrapper' className='hidden w-full max-w-[375px]'>
             <GameOn />
           </div>
         </div>
