@@ -5,6 +5,7 @@ import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
 // expand widths -- here
+// marker at full screen
 
 function App() {
 
