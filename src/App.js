@@ -12,6 +12,9 @@ import GameOn from './components/GameOn';
     // display circles of 4 pieces that won
   // marker logic, display when the row is column is clicked
 // 30 sec timer logic
+// all button logic
+
+// bug 1: height issue
 
 function App() {
 
