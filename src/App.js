@@ -5,6 +5,7 @@ import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
 // expand widths -- here
+  // pause screen
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
           <div id='rulesScreenWrapper' className='hidden w-full max-w-[480px] px-5'>
             <RulesScreen displayHome={displayHome} />
           </div>
-          <div id='gameOnWrapper' className='hidden w-full max-w-[375px] md:h-full md:pt-[30px] md:max-w-[632px]'>
+          <div id='gameOnWrapper' className='hidden w-full md:h-full md:pt-[30px]'>
             <GameOn />
           </div>
         </div>

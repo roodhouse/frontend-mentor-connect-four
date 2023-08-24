@@ -9,7 +9,7 @@ function BottomCard() {
             <div id="playerCardWrapper" className='' >
                 <PlayerCard />
             </div>
-            <div id="winCardWrapper" className='hidden h-[164px] absolute z-50 top-[-20px]'>
+            <div id="winCardWrapper" className='hidden h-[164px] absolute z-50 top-[-20px] md:top-[-40px]'>
                 <WinCard />
             </div>
         </div>

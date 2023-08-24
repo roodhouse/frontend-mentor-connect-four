@@ -16,11 +16,13 @@ function HomeScreen({hideHome}) {
     const handleCPUclick = (e) => {
         hideHome()
         document.getElementById('gameOnWrapper').classList.remove('hidden')
+        document.getElementById('mainContainer').classList.add('md:h-full')
     }
 
     const handleTwoClick = (e) => {
         hideHome()
         document.getElementById('gameOnWrapper').classList.remove('hidden')
+        document.getElementById('mainContainer').classList.add('md:h-full')
     }
 
 
