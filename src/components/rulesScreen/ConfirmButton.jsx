@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDisplayHome } from '../DisplayHome'
+import { useDisplayHome } from '../../context/DisplayHome'
 
 function ConfirmButton() {
   const { displayHome } = useDisplayHome()

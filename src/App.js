@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisplayHomeProvider } from './components/DisplayHome';
+import { DisplayHomeProvider } from './context/DisplayHome';
 import './App.css';
 import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';

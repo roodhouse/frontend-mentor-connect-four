@@ -3,7 +3,7 @@ import Logo from './homeScreen/Logo'
 import VsCPU from './homeScreen/VsCPU'
 import TwoPlayer from './homeScreen/TwoPlayer'
 import GameRules from './homeScreen/GameRules'
-import { useDisplayHome } from './DisplayHome'
+import { useDisplayHome } from '../context/DisplayHome'
 
 function HomeScreen() {
 
