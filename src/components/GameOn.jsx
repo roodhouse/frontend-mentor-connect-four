@@ -3,6 +3,7 @@ import GameOnHeader from './gameOn/GameOnHeader'
 import PlayerCard from './gameOn/PlayerCard'
 import GameGrid from './gameOn/GameGrid'
 import BottomCard from './gameOn/BottomCard'
+import Pause from './gameOn/Pause'
 
 function GameOn() {
   return (
@@ -20,8 +21,8 @@ function GameOn() {
             <div id="bottomCardWrapper" className=''>
                 <BottomCard />
             </div>
-            <div id="pauseMenu" className='h-screen absolute w-full top-0 bg-black opacity-50 z-40'>
-
+            <div id="pauseMenuWrapper" className='hidden flex justify-center'>
+                <Pause />
             </div>
         </div>
     </>
