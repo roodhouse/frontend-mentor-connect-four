@@ -7,6 +7,13 @@ function CircleContainer({index}) {
 
   const handleClick = (e) => {
     turn === 'Player1' ? setTurn('Player2') : setTurn('Player1')
+    const tile = e.target
+    // turn === 'Player1' ? (
+    //   tile.classList.remove('bg-transparent')
+    //   tile.classList.add('bg-[url("./assets/images/counter-red-large.svg")]')
+    // ) : (
+    //   ''
+    // )
   }
 
   return (
