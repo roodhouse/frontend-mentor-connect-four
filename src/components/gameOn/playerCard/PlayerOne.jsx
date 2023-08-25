@@ -1,6 +1,10 @@
 import React from 'react'
+import { useCompetition } from '../../../context/Competition'
 
 function PlayerOne() {
+
+  const { playerOneScore, setPlayerOneScore } = useCompetition()
+
   return (
     <>
         <div id="playerOneContainer">
@@ -9,7 +13,7 @@ function PlayerOne() {
                   <p>PLAYER 1</p>
                 </div>
                 <div id="playerOneScore" className='text-[32px] text-center leading-normal font-bold md:text-[56px]'>
-                  <p>12</p>
+                  <p>{playerOneScore}</p>
                 </div>
             </div>
             <div id="playerOneFace" className='relative'>

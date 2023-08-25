@@ -1,7 +1,12 @@
 import React from 'react'
+import { useCompetition } from '../../../context/Competition'
 
 function PlayerTwo() {
+
   // change the background image of player2 based and name on the competition
+
+  const { playerTwoCpuScore, setPlayerTwoCpuScore } = useCompetition()
+
   return (
     <>
         <div id="playerTwoContainer">
@@ -10,7 +15,7 @@ function PlayerTwo() {
                   <p>PLAYER 2</p>
                 </div>
                 <div id="playerTwoScore" className='text-[32px] text-center leading-normal font-bold md:text-[56px] md:order-1 xl:order-2'>
-                  <p>23</p>
+                  <p>{playerTwoCpuScore}</p>
                 </div>
             </div>
             <div id="playerTwoFace" className='relative'>

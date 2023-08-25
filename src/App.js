@@ -8,8 +8,13 @@ import GameOn from './components/GameOn';
 
 // logic
 // all button logic
+    // menu
+        // restart
+        // quit
+    // restart
   // competition
   // turn
+  // score logic
   // win logic
     // display circles of 4 pieces that won
   // marker logic, display when the row is column is clicked
