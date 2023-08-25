@@ -8,6 +8,10 @@ import { useCompetition } from '../context/Competition'
 
 function HomeScreen() {
 
+    // array from markers
+    // state for markers
+    // if the state for markers === the id of the markers then show it
+
     const { hideHome } = useDisplayHome()
     const { competition, setCompetition } = useCompetition()
 

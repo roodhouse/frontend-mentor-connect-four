@@ -3,10 +3,12 @@ import { useCompetition } from '../../../context/Competition'
 
 function CircleContainer({index}) {
 
-  const { turn, setTurn, competition } = useCompetition()
+  // see gpt about how to search for hte e.target.id within the columms..
+  const { turn, setTurn, competition, columns, marker, setMarker } = useCompetition()
 
   const handleClick = (e) => {
     if (turn === 'Player1') {
+      console.log(e.target.id)
       const tile = e.target
       tile.classList.remove('bg-transparent')
       tile.classList.add('bg-[url("./assets/images/counter-red-small.svg")]','md:bg-[url("./assets/images/counter-red-large.svg")]')

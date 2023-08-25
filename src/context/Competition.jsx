@@ -10,6 +10,7 @@ const CompetitionProvider = ({ children }) => {
     const [ turn, setTurn ] = useState('Player1')
     const [ playerOneScore, setPlayerOneScore ] = useState(0)
     const [ playerTwoCpuScore, setPlayerTwoCpuScore ] = useState(0)
+    const [ marker, setMarker ] = useState('marker5')
 
     const cardStyle = () => {
         if ( turn === 'Player1') {
@@ -79,11 +80,22 @@ const CompetitionProvider = ({ children }) => {
         }
     }
 
+    const columns = {
+        col1: ['parentCircle0','parentCircle7','parentCircle14','parentCircle21','parentCircle28','parentCircle35'],
+        col2: ['parentCircle1','parentCircle8','parentCircle15','parentCircle22','parentCircle29','parentCircle36'],
+        col3: ['parentCircle2','parentCircle9','parentCircle16','parentCircle23','parentCircle30','parentCircle37'],
+        col4: ['parentCircle3','parentCircle10','parentCircle17','parentCircle24','parentCircle31','parentCircle38'],
+        col5: ['parentCircle4','parentCircle11','parentCircle18','parentCircle25','parentCircle32','parentCircle39'],
+        col6: ['parentCircle5','parentCircle12','parentCircle19','parentCircle26','parentCircle33','parentCircle40'],
+        col7: ['parentCircle6','parentCircle13','parentCircle20','parentCircle27','parentCircle34','parentCircle41'],
+    }
+
     return (
-        <CompetitionContext.Provider value={{ competition, setCompetition, turn, setTurn, playerOneScore, setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, cardStyle, cardBackground, turnText, player1Text, player1Face, player2Text, player2Face }}>
+        <CompetitionContext.Provider value={{ competition, setCompetition, turn, setTurn, playerOneScore, setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, cardStyle, cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, marker, setMarker, columns }}>
             {children}
         </CompetitionContext.Provider>
     )
+
 }
 
 // create a custom hook for using the context
