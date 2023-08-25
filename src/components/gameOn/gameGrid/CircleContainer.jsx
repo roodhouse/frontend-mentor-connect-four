@@ -1,9 +1,17 @@
 import React from 'react'
+import { useCompetition } from '../../../context/Competition'
 
 function CircleContainer({index}) {
+
+  const { turn, setTurn, competition } = useCompetition()
+
+  const handleClick = (e) => {
+    turn === 'Player1' ? setTurn('Player2') : setTurn('Player1')
+  }
+
   return (
     <>
-        <div id={'parentCircle'+index} className='w-[35px] h-[38px] rounded-[50%] bg-transparent bg-contain bg-no-repeat md:w-16 md:h-16 md:ml-1' />
+        <div id={'parentCircle'+index} onClick={handleClick} className='w-[35px] h-[38px] rounded-[50%] bg-transparent bg-contain bg-no-repeat md:w-16 md:h-16 md:ml-1 cursor-pointer' />
     </>
   )
 }

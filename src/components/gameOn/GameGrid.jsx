@@ -14,7 +14,7 @@ function GameGrid() {
             ))}
           </div>
 
-          <div id="circleLayerWrapper" className='w-[335px] h-[310px] grid grid-cols-7 justify-items-center bottom-0 items-center absolute z-30 border-[3px] border-transparent pl-[10px] pr-[10px] pb-8 pt-[10px] md:w-full md:h-full md:pt-5 md:px-5 md:pb-[60px]'>
+          <div id="circleLayerWrapper" className='w-[335px] h-[310px] grid grid-cols-7 justify-items-center bottom-0 items-center absolute z-[100] border-[3px] border-transparent pl-[10px] pr-[10px] pb-8 pt-[10px] md:w-full md:h-full md:pt-5 md:px-5 md:pb-[60px]'>
               {Array.from({ length: 42}).map((_, index) => (
                 <CircleContainer key={index} index={index} />
               ))}

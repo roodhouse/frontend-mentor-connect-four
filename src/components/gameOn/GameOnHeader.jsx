@@ -8,11 +8,12 @@ function GameOnHeader() {
 
     const handleMenuClick = () => {
         document.getElementById('pauseMenuWrapper').classList.remove('hidden')
+        document.getElementById('pauseMenuContainer').classList.add('z-[101]')
     }
   return (
     <>
-        <div id="gameOnHeaderContainer" className='flex items-center justify-between' onClick={handleMenuClick}>
-            <div id="headerMenuButtonWrapper">
+        <div id="gameOnHeaderContainer" className='flex items-center justify-between' >
+            <div id="headerMenuButtonWrapper" onClick={handleMenuClick}>
                 <Menu />
             </div>
             <div id="headerLogoWrapper">

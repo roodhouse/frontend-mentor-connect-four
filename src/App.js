@@ -9,11 +9,15 @@ import GameOn from './components/GameOn';
 // logic
 // all button logic
     // game board click...
+        // change color of symbols
+          // marker
+          // player card at bottom
     // menu
         // restart
           // reset current game board
     // restart
   // competition
+      // change the player symbol based on player 2 or CPU
   // turn
   // score logic
   // win logic
