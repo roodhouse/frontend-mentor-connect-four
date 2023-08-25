@@ -6,14 +6,17 @@ function CircleContainer({index}) {
   const { turn, setTurn, competition } = useCompetition()
 
   const handleClick = (e) => {
-    turn === 'Player1' ? setTurn('Player2') : setTurn('Player1')
-    const tile = e.target
-    // turn === 'Player1' ? (
-    //   tile.classList.remove('bg-transparent')
-    //   tile.classList.add('bg-[url("./assets/images/counter-red-large.svg")]')
-    // ) : (
-    //   ''
-    // )
+    if (turn === 'Player1') {
+      const tile = e.target
+      tile.classList.remove('bg-transparent')
+      tile.classList.add('bg-[url("./assets/images/counter-red-small.svg")]','md:bg-[url("./assets/images/counter-red-large.svg")]')
+      setTurn('Player2')
+    } else {
+      const tile = e.target
+      tile.classList.remove('bg-transparent')
+      tile.classList.add('bg-[url("./assets/images/counter-yellow-small.svg")]','md:bg-[url("./assets/images/counter-yellow-large.svg")]')
+      setTurn('Player1')
+    }
   }
 
   return (

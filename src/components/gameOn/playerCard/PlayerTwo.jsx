@@ -23,7 +23,9 @@ function PlayerTwo() {
                 </div>
             </div>
             <div id="playerTwoFace" className='relative'>
-                <div className='w-[54px] h-[59px] bg-[url("./assets/images/player-two.svg")] bg-no-repeat absolute bottom-[22px] left-[109px] md:left-[88%] md:bottom-[18px] xl:bottom-[125px] xl:left-[32%]' />
+                <div className='w-[54px] h-[59px] bg-no-repeat absolute bottom-[22px] left-[109px] md:left-[88%] md:bottom-[18px] xl:bottom-[125px] xl:left-[32%]' style={{
+                  backgroundImage: `url(./assets/images/${ competition === 'Human' ? 'player-two' : 'cpu'}.svg)`
+                }} />
             </div>
         </div>
     </>
@@ -31,3 +33,5 @@ function PlayerTwo() {
 }
 
 export default PlayerTwo
+
+// bg-[url("./assets/images/${ competition === 'Human' ? 'player-one' : 'you'}.svg")]

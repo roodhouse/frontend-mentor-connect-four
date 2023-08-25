@@ -5,6 +5,7 @@ function PlayerOne() {
 
   const { playerOneScore, setPlayerOneScore, competition } = useCompetition()
 
+  console.log(competition)
   return (
     <>
         <div id="playerOneContainer">
@@ -21,7 +22,9 @@ function PlayerOne() {
                 </div>
             </div>
             <div id="playerOneFace" className='relative'>
-                <div className='w-[54px] h-[59px] bg-[url("./assets/images/player-one.svg")] bg-no-repeat absolute bottom-[22px] right-[109px] md:right-[88%] md:bottom-[18px] xl:bottom-[125px] xl:right-[32%]' />
+                <div className='w-[54px] h-[59px] bg-no-repeat absolute bottom-[22px] right-[109px] md:right-[88%] md:bottom-[18px] xl:bottom-[125px] xl:right-[32%]' style={{
+                  backgroundImage: `url(./assets/images/${ competition === 'Human' ? 'player-one' : 'you'}.svg)`
+                }} />
             </div>
         </div>
     </>
