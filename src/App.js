@@ -8,9 +8,10 @@ import GameOn from './components/GameOn';
 
 // logic
 // all button logic
+    // game board click...
     // menu
         // restart
-        // quit
+          // reset current game board
     // restart
   // competition
   // turn
