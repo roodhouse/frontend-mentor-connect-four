@@ -7,7 +7,7 @@ function Marker({index}) {
 
   return (
     <>
-        <div id={'marker'+index} className='aMarker w-8 h-[26px] bg-transparent bg-contain bg-no-repeat ml-[52px]' />
+        <div id={'marker-'+index} className='aMarker w-8 h-[26px] bg-transparent bg-contain bg-no-repeat ml-[52px]' />
     </>
   )
 }

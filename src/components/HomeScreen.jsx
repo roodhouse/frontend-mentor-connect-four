@@ -8,12 +8,8 @@ import { useCompetition } from '../context/Competition'
 
 function HomeScreen() {
 
-    // array from markers
-    // state for markers
-    // if the state for markers === the id of the markers then show it
-
     const { hideHome } = useDisplayHome()
-    const { competition, setCompetition } = useCompetition()
+    const { setCompetition } = useCompetition()
 
     const handleRulesClick = (e) => {
         // hide the home screen
@@ -37,8 +33,6 @@ function HomeScreen() {
         document.getElementById('mainContainer').classList.add('md:h-full', 'xl:h-screen')
         setCompetition('Human')
     }
-
-    console.log(competition)
     
   return (
     <>

@@ -11,6 +11,9 @@ const CompetitionProvider = ({ children }) => {
     const [ playerOneScore, setPlayerOneScore ] = useState(0)
     const [ playerTwoCpuScore, setPlayerTwoCpuScore ] = useState(0)
     const [ marker, setMarker ] = useState('marker5')
+    const [ playerOneArray, setPlayerOneArray ] = useState([])
+    const [ playerTwoArray, setPlayerTwoArray ] = useState([])
+    const [ allowedToClick, setAllowedToClick ] = useState(['parentCircle-35', 'parentCircle-36', 'parentCircle-37', 'parentCircle-38', 'parentCircle-39', 'parentCircle-40', 'parentCircle-41'])
 
     const cardStyle = () => {
         if ( turn === 'Player1') {
@@ -81,17 +84,22 @@ const CompetitionProvider = ({ children }) => {
     }
 
     const columns = {
-        col1: ['parentCircle0','parentCircle7','parentCircle14','parentCircle21','parentCircle28','parentCircle35'],
-        col2: ['parentCircle1','parentCircle8','parentCircle15','parentCircle22','parentCircle29','parentCircle36'],
-        col3: ['parentCircle2','parentCircle9','parentCircle16','parentCircle23','parentCircle30','parentCircle37'],
-        col4: ['parentCircle3','parentCircle10','parentCircle17','parentCircle24','parentCircle31','parentCircle38'],
-        col5: ['parentCircle4','parentCircle11','parentCircle18','parentCircle25','parentCircle32','parentCircle39'],
-        col6: ['parentCircle5','parentCircle12','parentCircle19','parentCircle26','parentCircle33','parentCircle40'],
-        col7: ['parentCircle6','parentCircle13','parentCircle20','parentCircle27','parentCircle34','parentCircle41'],
+        col1: ['marker-0','parentCircle-0','parentCircle-7','parentCircle-14','parentCircle-21','parentCircle-28','parentCircle-35'],
+        col2: ['marker-1','parentCircle-1','parentCircle-8','parentCircle-15','parentCircle-22','parentCircle-29','parentCircle-36'],
+        col3: ['marker-2','parentCircle-2','parentCircle-9','parentCircle-16','parentCircle-23','parentCircle-30','parentCircle-37'],
+        col4: ['marker-3','parentCircle-3','parentCircle-10','parentCircle-17','parentCircle-24','parentCircle-31','parentCircle-38'],
+        col5: ['marker-4','parentCircle-4','parentCircle-11','parentCircle-18','parentCircle-25','parentCircle-32','parentCircle-39'],
+        col6: ['marker-5','parentCircle-5','parentCircle-12','parentCircle-19','parentCircle-26','parentCircle-33','parentCircle-40'],
+        col7: ['marker-6','parentCircle-6','parentCircle-13','parentCircle-20','parentCircle-27','parentCircle-34','parentCircle-41'],
     }
 
+    
+
     return (
-        <CompetitionContext.Provider value={{ competition, setCompetition, turn, setTurn, playerOneScore, setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, cardStyle, cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, marker, setMarker, columns }}>
+        <CompetitionContext.Provider value={{ competition, setCompetition, turn, setTurn, playerOneScore, 
+        setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, cardStyle, 
+        cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
+        marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick }}>
             {children}
         </CompetitionContext.Provider>
     )

@@ -7,10 +7,9 @@ import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
 // logic
+// 30 sec timer logic
 // all button logic
     // game board click...
-        // change color of symbols
-          // marker -- here
     // menu
         // restart
           // reset current game board
@@ -22,7 +21,7 @@ import GameOn from './components/GameOn';
   // win logic
     // display circles of 4 pieces that won
   // marker logic, display when the row is column is clicked
-// 30 sec timer logic
+
 
 // animation
 

@@ -10,27 +10,30 @@ import { useCompetition } from '../context/Competition'
 function GameOn() {
 
     const { marker, turn, columns } = useCompetition()
-    console.log(marker)
-    console.log(columns)
 
     useEffect(() => {
         let theMarkers = document.querySelectorAll('.aMarker')
         theMarkers = Array.from(theMarkers)
-        console.log(theMarkers)
 
         theMarkers.forEach((mark) => {
-            if (mark.id === marker) {
-                console.log(mark.id)
-                mark.classList.remove('bg-transparent')
-                if (turn === 'Player1') {
-                    mark.classList.add('bg-[url("./assets/images/marker-red.svg")]')
+            if (mark.style.display !== 'none') {
+                if ( turn === 'Player1') {
+                    mark.classList.remove('bg-[url("./assets/images/marker-yellow.svg")]')
+                    mark.classList.add('bg-transparent')
                 } else {
-                    mark.classList.add('bg-[url("./assets/images/marker-yellow.svg")]')
+                    console.log('player2')
+                    mark.classList.remove('bg-[url("./assets/images/marker-red.svg")]')
+                    mark.classList.add('bg-transparent')
                 }
-            } else {
-                console.log('nope')
-            }
- 
+            }  
+                if (mark.id === marker) {
+                    mark.classList.remove('bg-transparent')
+                    if (turn === 'Player1') {
+                        mark.classList.add('bg-[url("./assets/images/marker-red.svg")]')
+                    } else {
+                        mark.classList.add('bg-[url("./assets/images/marker-yellow.svg")]')
+                    }
+                }
         })
     },[turn, marker])
     
