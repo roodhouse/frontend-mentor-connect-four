@@ -10,12 +10,12 @@ import GameOn from './components/GameOn';
 // all button logic
     // game board click...
         // change color of symbols
-          // marker
-          // player card at bottom
+          // marker -- here
     // menu
         // restart
           // reset current game board
     // restart
+    // play again
   // competition
   // turn
   // score logic
