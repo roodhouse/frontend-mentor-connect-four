@@ -5,7 +5,6 @@ function WinCard() {
 
   const { winner, competition } = useCompetition()
 
-  console.log(winner)
   return (
     <>
         <div id="winCardContainer" className='w-[285px] h-full bg-white rounded-[20px] border-[3px] border-black shadow-[0px_10px_0px_0px_#000] flex flex-col py-[17px] items-center'>

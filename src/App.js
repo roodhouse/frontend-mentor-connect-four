@@ -11,18 +11,12 @@ import GameOn from './components/GameOn';
 
 // logic
 // all button logic
-    // game board click...
-    // menu
-        // restart
-          // reset current game board
-    // restart
     // play again
-  // competition
-  // turn
+
+    // win logic
+      // display circles of 4 pieces that won
+      // marker logic, display when the row is column is clicked
   // score logic
-  // win logic
-    // display circles of 4 pieces that won
-  // marker logic, display when the row is column is clicked
   // set to rotate who goes first each game
 
 

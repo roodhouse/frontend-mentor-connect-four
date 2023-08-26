@@ -6,13 +6,15 @@ import { useCompetition } from '../../context/Competition'
 
 function GameOnHeader() {
 
-    const { pauseTimer } = useCompetition()
+    const { pauseTimer, restart } = useCompetition()
 
     const handleMenuClick = () => {
         document.getElementById('pauseMenuWrapper').classList.remove('hidden')
         document.getElementById('pauseMenuContainer').classList.add('z-[101]')
         pauseTimer() 
     }
+
+
   return (
     <>
         <div id="gameOnHeaderContainer" className='flex items-center justify-between' >
@@ -22,7 +24,7 @@ function GameOnHeader() {
             <div id="headerLogoWrapper">
                 <Logo />
             </div>
-            <div id="headerRestartButtonWrapper">
+            <div id="headerRestartButtonWrapper" onClick={restart}>
                 <Restart />
             </div>
         </div>

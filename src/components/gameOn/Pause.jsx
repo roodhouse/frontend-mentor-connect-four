@@ -9,11 +9,16 @@ import { useCompetition } from '../../context/Competition'
 function Pause() {
 
     const { displayHome } = useDisplayHome()
-    const { playerOneScore, setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, startTimer } = useCompetition()
+    const { playerOneScore, setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, startTimer, restart } = useCompetition()
 
     const handleContinueClick = () => {
         document.getElementById('pauseMenuWrapper').classList.add('hidden')
         startTimer()
+    }
+
+    const handleRestartClick = () => {
+        document.getElementById('pauseMenuWrapper').classList.add('hidden')
+        restart()
     }
 
   const handleQuit = (e) => {
@@ -40,7 +45,7 @@ function Pause() {
                 <div id="continueWrapper" onClick={handleContinueClick} className='w-full mb-[30px] cursor-pointer'>
                     <Continue />
                 </div>
-                <div id="restartWrapper" className='w-full mb-[30px] cursor-pointer'>
+                <div id="restartWrapper" onClick={handleRestartClick} className='w-full mb-[30px] cursor-pointer'>
                     <RestartGame />
                 </div>
                 <div id="quitWrapper" onClick={handleQuit} className='w-full mb-[30px] cursor-pointer'>

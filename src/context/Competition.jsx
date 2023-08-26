@@ -118,11 +118,8 @@ const CompetitionProvider = ({ children }) => {
       }
     
       const pauseTimer = () => {
-        console.log('pause timer')
-        console.log(intervalIdRef.current);
         clearInterval(intervalIdRef.current);
         intervalIdRef.current = null; // Clear the ref
-        console.log(intervalIdRef.current);
       }
 
     const stopTimer = () => {
@@ -156,12 +153,41 @@ const CompetitionProvider = ({ children }) => {
         }
       }, [timer]);
 
+      // clear piece background
+      function clearNonEmptyBackgrounds() {
+        for (const columnKey in columns) {
+            const column = columns[columnKey]
+            for (let i = 0; i < column.length; i++) {
+                const item = document.getElementById(column[i])
+                if (item && item.style.background !== '') {
+                    item.style.background = ''
+                }
+            }
+        }
+      }
+
+      // restart click
+      const restart = () => {
+        // clear the current player piece array
+        setPlayerOneArray([])
+        setPlayerTwoArray([])
+        // reset the allowed to click array
+        setAllowedToClick(['parentCircle-35', 'parentCircle-36', 'parentCircle-37', 'parentCircle-38', 'parentCircle-39', 'parentCircle-40', 'parentCircle-41'])
+        // reset timer
+        resetTimer()
+        // reset board to all blanks
+        clearNonEmptyBackgrounds()
+        // reset marker
+        setMarker('marker5')
+        startTimer()
+      }
+
     return (
         <CompetitionContext.Provider value={{ competition, setCompetition, turn, setTurn, playerOneScore, 
         setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, cardStyle, 
         cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
         marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, 
-        setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, resetTimer, pauseTimer, winner, setWinner }}>
+        setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, resetTimer, pauseTimer, winner, setWinner, restart }}>
             {children}
         </CompetitionContext.Provider>
     )
