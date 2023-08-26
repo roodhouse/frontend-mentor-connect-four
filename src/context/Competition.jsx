@@ -14,9 +14,10 @@ const CompetitionProvider = ({ children }) => {
     const [ playerOneArray, setPlayerOneArray ] = useState([])
     const [ playerTwoArray, setPlayerTwoArray ] = useState([])
     const [ allowedToClick, setAllowedToClick ] = useState(['parentCircle-35', 'parentCircle-36', 'parentCircle-37', 'parentCircle-38', 'parentCircle-39', 'parentCircle-40', 'parentCircle-41'])
-    const [ timer, setTimer ] = useState(30)
+    const [ timer, setTimer ] = useState(3)
     const [ intervalId, setIntervalId ] = useState(null)
     const [ winner, setWinner ] = useState(null)
+    const [ firstTurn, setFirstTurn ] = useState('Player1')
 
     const cardStyle = () => {
         if ( turn === 'Player1') {
@@ -182,12 +183,46 @@ const CompetitionProvider = ({ children }) => {
         startTimer()
       }
 
+      // play again click
+      const playAgain = () => {
+        const playerBottomCardWrapper = document.getElementById('playerBottomCardWrapper');
+        const winCardWrapper = document.getElementById('winCardWrapper');
+        // remove the win screen and display the turn and counter screen
+        playerBottomCardWrapper.classList.remove('hidden')
+        winCardWrapper.classList.add('hidden')
+        // determin whos turn it is based on who went first last time
+        if (firstTurn === 'Player1') {
+            setTurn('Player2')
+            setFirstTurn('Player2')
+        } else {
+            setTurn('Player1')
+            setFirstTurn('Player1')
+        }
+        // set the winner back to null
+        setWinner(null)
+        // clear the current player piece array
+        setPlayerOneArray([])
+        setPlayerTwoArray([])
+        // reset the allowed to click array
+        setAllowedToClick(['parentCircle-35', 'parentCircle-36', 'parentCircle-37', 'parentCircle-38', 'parentCircle-39', 'parentCircle-40', 'parentCircle-41'])
+        // reset timer
+        resetTimer()
+        // reset board to all blanks
+        clearNonEmptyBackgrounds()
+        // reset marker
+        setMarker('marker5')
+        startTimer()
+
+      }
+
+
     return (
         <CompetitionContext.Provider value={{ competition, setCompetition, turn, setTurn, playerOneScore, 
         setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, cardStyle, 
         cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
         marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, 
-        setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, resetTimer, pauseTimer, winner, setWinner, restart }}>
+        setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, 
+        resetTimer, pauseTimer, winner, setWinner, restart, playAgain }}>
             {children}
         </CompetitionContext.Provider>
     )
