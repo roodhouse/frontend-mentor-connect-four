@@ -5,13 +5,11 @@ import RestartGame from './pause/RestartGame'
 import Quit from './pause/Quit'
 import { useDisplayHome } from '../../context/DisplayHome'
 import { useCompetition } from '../../context/Competition'
-import { useTimer } from '../../context/Timer'
 
 function Pause() {
 
     const { displayHome } = useDisplayHome()
-    const { playerOneScore, setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore } = useCompetition()
-    const { startTimer } = useTimer()
+    const { playerOneScore, setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, startTimer } = useCompetition()
 
     const handleContinueClick = () => {
         document.getElementById('pauseMenuWrapper').classList.add('hidden')

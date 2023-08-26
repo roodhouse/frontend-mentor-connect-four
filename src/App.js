@@ -1,7 +1,6 @@
 import React from 'react';
 import { DisplayHomeProvider } from './context/DisplayHome';
 import { CompetitionProvider } from './context/Competition';
-import { TimerProvider } from './context/Timer';
 import './App.css';
 import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
@@ -12,6 +11,8 @@ import GameOn from './components/GameOn';
 
 // logic
 // 30 sec timer logic
+    // after first game board click, menu click does not pause the timer
+    // at 0 reset
 // all button logic
     // game board click...
     // menu
@@ -36,7 +37,7 @@ function App() {
   return (
     <CompetitionProvider>
       <DisplayHomeProvider>
-        <TimerProvider>
+        
           <div className="App">
             <div id='mainWrapper' className=''>
               <div id='mainContainer' className='bg-purple md:bg-darkPurple h-screen flex justify-center pt-[50px] md:items-center md:pt-0'>
@@ -52,7 +53,7 @@ function App() {
               </div>
             </div>
           </div>
-        </TimerProvider>
+        
       </DisplayHomeProvider>
     </CompetitionProvider>
   );

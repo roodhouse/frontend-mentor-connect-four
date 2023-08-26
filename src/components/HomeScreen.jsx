@@ -5,13 +5,11 @@ import TwoPlayer from './homeScreen/TwoPlayer'
 import GameRules from './homeScreen/GameRules'
 import { useDisplayHome } from '../context/DisplayHome'
 import { useCompetition } from '../context/Competition'
-import { useTimer } from '../context/Timer'
 
 function HomeScreen() {
 
     const { hideHome } = useDisplayHome()
-    const { setCompetition } = useCompetition()
-    const { setTimer, startTimer } = useTimer()
+    const { setCompetition, setTimer, startTimer } = useCompetition()
 
     const handleRulesClick = (e) => {
         // hide the home screen

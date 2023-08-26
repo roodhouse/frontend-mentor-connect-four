@@ -1,4 +1,4 @@
-import React, { useContext, createContext, useState } from 'react'
+import React, { useContext, createContext, useState, useEffect } from 'react'
 
 // create the context
 const CompetitionContext = createContext()
@@ -14,6 +14,8 @@ const CompetitionProvider = ({ children }) => {
     const [ playerOneArray, setPlayerOneArray ] = useState([])
     const [ playerTwoArray, setPlayerTwoArray ] = useState([])
     const [ allowedToClick, setAllowedToClick ] = useState(['parentCircle-35', 'parentCircle-36', 'parentCircle-37', 'parentCircle-38', 'parentCircle-39', 'parentCircle-40', 'parentCircle-41'])
+    const [ timer, setTimer ] = useState(30)
+    const [ intervalId, setIntervalId ] = useState(null)
 
     const cardStyle = () => {
         if ( turn === 'Player1') {
@@ -93,12 +95,58 @@ const CompetitionProvider = ({ children }) => {
         col7: ['marker-6','parentCircle-6','parentCircle-13','parentCircle-20','parentCircle-27','parentCircle-34','parentCircle-41'],
     }
 
+    // timer functions
+    const startTimer = () => {
+        if (intervalId === null && timer === 30) {
+            const id = setInterval(() => {
+                setTimer((prevTimer) => prevTimer -1)
+            }, 1000)
+            setIntervalId(id)
+        } else if ( intervalId !== null && timer !== 30 ) {
+            const id = setInterval(() => {
+                setTimer((prevTimer) => prevTimer -1)
+            }, 1000)
+            setIntervalId(id)
+        }
+    }
+
+    const pauseTimer = () => {
+        clearInterval(intervalId)
+    }
+
+    const stopTimer = () => {
+        clearInterval(intervalId)
+        setIntervalId(null)
+    }
+    
+    const resetTimer = () => {
+        
+        setIntervalId(null)
+        setTimer(30)
+    }
+
+    useEffect(() => {
+        if (timer === 0) {
+          if (turn === 'Player1') {
+            let score = playerOneScore;
+            setPlayerOneScore(score + 1);
+            stopTimer();
+            setTurn('Player2');
+          } else if (turn === 'Player2') {
+            let score = playerTwoCpuScore;
+            setPlayerTwoCpuScore(score + 1);
+            stopTimer();
+            setTurn('Player1');
+          }
+        }
+      }, [timer]);
+
     return (
         <CompetitionContext.Provider value={{ competition, setCompetition, turn, setTurn, playerOneScore, 
         setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, cardStyle, 
         cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
         marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, 
-        setPlayerTwoArray, allowedToClick, setAllowedToClick }}>
+        setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, resetTimer, pauseTimer }}>
             {children}
         </CompetitionContext.Provider>
     )

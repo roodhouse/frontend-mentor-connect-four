@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react'
 import { useCompetition } from '../../../context/Competition'
-import { useTimer } from '../../../context/Timer'
 
 function PlayerCard() {
 
-  const { turn, competition, cardStyle, cardBackground, turnText } = useCompetition()
-  const { timer, setTimer } = useTimer()
+  const { turn, setTurn, competition, cardStyle, cardBackground, turnText, setPlayerOneScore, playerOneScore, timer } = useCompetition()
 
   return (
     <>

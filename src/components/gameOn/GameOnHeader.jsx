@@ -2,12 +2,11 @@ import React from 'react'
 import Menu from './gameOnHeader/Menu'
 import Logo from '../homeScreen/Logo'
 import Restart from './gameOnHeader/Restart'
-import { useTimer } from '../../context/Timer'
-
+import { useCompetition } from '../../context/Competition'
 
 function GameOnHeader() {
 
-    const { pauseTimer } = useTimer()
+    const { pauseTimer } = useCompetition()
 
     const handleMenuClick = () => {
         document.getElementById('pauseMenuWrapper').classList.remove('hidden')

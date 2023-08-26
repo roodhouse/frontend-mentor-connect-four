@@ -1,13 +1,10 @@
 import React from 'react'
 import { useCompetition } from '../../../context/Competition'
-import { useTimer } from '../../../context/Timer'
 
 function CircleContainer({index}) {
 
   const { turn, setTurn, columns, setMarker, playerOneArray, setPlayerOneArray, 
-          playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick  } = useCompetition()
-
-  const { resetTimer } = useTimer()
+          playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick, resetTimer  } = useCompetition()
 
   const handleClick = (e) => {
     const tile = e.target
