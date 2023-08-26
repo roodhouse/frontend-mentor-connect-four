@@ -10,7 +10,6 @@ import GameOn from './components/GameOn';
 // bug 2: z-index issue on grid in small screens
 
 // logic
-// 30 sec timer logic
 // all button logic
     // game board click...
     // menu
@@ -24,6 +23,7 @@ import GameOn from './components/GameOn';
   // win logic
     // display circles of 4 pieces that won
   // marker logic, display when the row is column is clicked
+  // set to rotate who goes first each game
 
 
 // animation

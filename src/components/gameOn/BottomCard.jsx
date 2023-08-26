@@ -4,7 +4,7 @@ import WinCard from './bottomCard/WinCard'
 import { useCompetition } from '../../context/Competition'
 
 function BottomCard() {
-  const { playerOneScore, playerTwoCpuScore } = useCompetition()
+  const { playerOneScore, playerTwoCpuScore, winner } = useCompetition()
   const prevPlayerOneScoreRef = useRef(playerOneScore)
   const prevPlayerTwoCpuScoreRef = useRef(playerTwoCpuScore)
 
@@ -27,9 +27,19 @@ function BottomCard() {
     }
   }, [playerOneScore, playerTwoCpuScore]);
 
+  useEffect(() => {
+    if ( winner === null ) {
+      document.getElementById('bottomCardContainer').style.backgroundColor = '#5C2DD5'
+    } else if (  winner === 'Player1') {
+      document.getElementById('bottomCardContainer').style.backgroundColor = '#FD6687'
+    } else {
+      document.getElementById('bottomCardContainer').style.backgroundColor = '#FFCE67'
+    }
+  }, [winner])
+
   return (
     <>
-        <div id="bottomCardContainer" className='w-full h-[236px] rounded-[60px_60px_0px_0px] bg-darkPurple flex justify-center relative'>
+        <div id="bottomCardContainer" className='w-full h-[236px] rounded-[60px_60px_0px_0px] flex justify-center relative'>
             <div id="playerBottomCardWrapper" className='' >
                 <PlayerCard />
             </div>

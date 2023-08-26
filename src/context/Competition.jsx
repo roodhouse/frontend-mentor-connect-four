@@ -16,6 +16,7 @@ const CompetitionProvider = ({ children }) => {
     const [ allowedToClick, setAllowedToClick ] = useState(['parentCircle-35', 'parentCircle-36', 'parentCircle-37', 'parentCircle-38', 'parentCircle-39', 'parentCircle-40', 'parentCircle-41'])
     const [ timer, setTimer ] = useState(30)
     const [ intervalId, setIntervalId ] = useState(null)
+    const [ winner, setWinner ] = useState(null)
 
     const cardStyle = () => {
         if ( turn === 'Player1') {
@@ -98,26 +99,6 @@ const CompetitionProvider = ({ children }) => {
     // timer functions
 
     const intervalIdRef = useRef(null)
-    // const startTimer = () => {
-    //     if (intervalId === null && timer === 30) {
-    //         const id = setInterval(() => {
-    //             setTimer((prevTimer) => prevTimer -1)
-    //         }, 1000)
-    //         setIntervalId(id)
-    //     } else if ( intervalId !== null && timer !== 30 ) {
-    //         const id = setInterval(() => {
-    //             setTimer((prevTimer) => prevTimer -1)
-    //         }, 1000)
-    //         setIntervalId(id)
-    //     }
-    // }
-
-    // const pauseTimer = () => {
-    //     console.log('pause timer')
-    //     console.log(intervalId)
-    //     clearInterval(intervalId)
-    //     console.log(intervalId)
-    // }
 
     const startTimer = () => {
         if (intervalIdRef.current === null) {
@@ -158,15 +139,19 @@ const CompetitionProvider = ({ children }) => {
     useEffect(() => {
         if (timer === 0) {
           if (turn === 'Player1') {
-            let score = playerOneScore;
-            setPlayerOneScore(score + 1);
-            stopTimer();
-            setTurn('Player2');
-          } else if (turn === 'Player2') {
             let score = playerTwoCpuScore;
             setPlayerTwoCpuScore(score + 1);
             stopTimer();
+            setTurn('Player2');
+            // set winner
+            setWinner('Player2')
+          } else if (turn === 'Player2') {
+            let score = playerOneScore;
+            setPlayerOneScore(score + 1);
+            stopTimer();
             setTurn('Player1');
+            // set Winner
+            setWinner('Player1')
           }
         }
       }, [timer]);
@@ -176,7 +161,7 @@ const CompetitionProvider = ({ children }) => {
         setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, cardStyle, 
         cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
         marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, 
-        setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, resetTimer, pauseTimer }}>
+        setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, resetTimer, pauseTimer, winner, setWinner }}>
             {children}
         </CompetitionContext.Provider>
     )
