@@ -11,8 +11,6 @@ import GameOn from './components/GameOn';
 
 // logic
 // 30 sec timer logic
-    // after first game board click, menu click does not pause the timer
-    // at 0 reset
 // all button logic
     // game board click...
     // menu

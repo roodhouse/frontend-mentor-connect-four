@@ -1,4 +1,4 @@
-import React, { useContext, createContext, useState, useEffect } from 'react'
+import React, { useContext, createContext, useState, useEffect, useRef } from 'react'
 
 // create the context
 const CompetitionContext = createContext()
@@ -96,23 +96,53 @@ const CompetitionProvider = ({ children }) => {
     }
 
     // timer functions
-    const startTimer = () => {
-        if (intervalId === null && timer === 30) {
-            const id = setInterval(() => {
-                setTimer((prevTimer) => prevTimer -1)
-            }, 1000)
-            setIntervalId(id)
-        } else if ( intervalId !== null && timer !== 30 ) {
-            const id = setInterval(() => {
-                setTimer((prevTimer) => prevTimer -1)
-            }, 1000)
-            setIntervalId(id)
-        }
-    }
 
-    const pauseTimer = () => {
-        clearInterval(intervalId)
-    }
+    const intervalIdRef = useRef(null)
+    // const startTimer = () => {
+    //     if (intervalId === null && timer === 30) {
+    //         const id = setInterval(() => {
+    //             setTimer((prevTimer) => prevTimer -1)
+    //         }, 1000)
+    //         setIntervalId(id)
+    //     } else if ( intervalId !== null && timer !== 30 ) {
+    //         const id = setInterval(() => {
+    //             setTimer((prevTimer) => prevTimer -1)
+    //         }, 1000)
+    //         setIntervalId(id)
+    //     }
+    // }
+
+    // const pauseTimer = () => {
+    //     console.log('pause timer')
+    //     console.log(intervalId)
+    //     clearInterval(intervalId)
+    //     console.log(intervalId)
+    // }
+
+    const startTimer = () => {
+        if (intervalIdRef.current === null) {
+          const id = setInterval(() => {
+            setTimer((prevTimer) => {
+              if (prevTimer > 0) {
+                return prevTimer - 1;
+              } else {
+                clearInterval(id);
+                intervalIdRef.current = null; // Clear the ref
+                return prevTimer; // Timer reached 0, don't decrement further
+              }
+            });
+          }, 1000);
+          intervalIdRef.current = id; // Set the ref
+        }
+      }
+    
+      const pauseTimer = () => {
+        console.log('pause timer')
+        console.log(intervalIdRef.current);
+        clearInterval(intervalIdRef.current);
+        intervalIdRef.current = null; // Clear the ref
+        console.log(intervalIdRef.current);
+      }
 
     const stopTimer = () => {
         clearInterval(intervalId)

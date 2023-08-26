@@ -48,6 +48,7 @@ function CircleContainer({index}) {
       }
     } else {
       console.log('nay')
+      return
     }
     // find the correct column and place the marker
     const clickedCircle = e.target.id

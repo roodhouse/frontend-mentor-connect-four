@@ -11,7 +11,7 @@ function GameOnHeader() {
     const handleMenuClick = () => {
         document.getElementById('pauseMenuWrapper').classList.remove('hidden')
         document.getElementById('pauseMenuContainer').classList.add('z-[101]')
-        pauseTimer()
+        pauseTimer() 
     }
   return (
     <>
