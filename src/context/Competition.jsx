@@ -93,13 +93,12 @@ const CompetitionProvider = ({ children }) => {
         col7: ['marker-6','parentCircle-6','parentCircle-13','parentCircle-20','parentCircle-27','parentCircle-34','parentCircle-41'],
     }
 
-    
-
     return (
         <CompetitionContext.Provider value={{ competition, setCompetition, turn, setTurn, playerOneScore, 
         setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, cardStyle, 
         cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
-        marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick }}>
+        marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, 
+        setPlayerTwoArray, allowedToClick, setAllowedToClick }}>
             {children}
         </CompetitionContext.Provider>
     )

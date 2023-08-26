@@ -2,13 +2,17 @@ import React from 'react'
 import Menu from './gameOnHeader/Menu'
 import Logo from '../homeScreen/Logo'
 import Restart from './gameOnHeader/Restart'
+import { useTimer } from '../../context/Timer'
 
 
 function GameOnHeader() {
 
+    const { pauseTimer } = useTimer()
+
     const handleMenuClick = () => {
         document.getElementById('pauseMenuWrapper').classList.remove('hidden')
         document.getElementById('pauseMenuContainer').classList.add('z-[101]')
+        pauseTimer()
     }
   return (
     <>

@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useCompetition } from '../../../context/Competition'
+import { useTimer } from '../../../context/Timer'
 
 function PlayerCard() {
 
   const { turn, competition, cardStyle, cardBackground, turnText } = useCompetition()
+  const { timer, setTimer } = useTimer()
 
   return (
     <>
@@ -15,7 +17,7 @@ function PlayerCard() {
                     <p>{turnText()}</p>
                 </div>
                 <div id="countdown" className='text-center text-[56px] leading-normal font-bold text-white' style={{ color: cardStyle() }}>
-                    <p>15s</p>
+                    <p>{timer}s</p>
                 </div>
 
         </div>

@@ -4,8 +4,7 @@ import { useCompetition } from '../../../context/Competition'
 function PlayerOne() {
 
   const { playerOneScore, setPlayerOneScore, competition, player1Text, player1Face } = useCompetition()
-
-  console.log(competition)
+  
   return (
     <>
         <div id="playerOneContainer">
