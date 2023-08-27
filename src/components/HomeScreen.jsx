@@ -3,8 +3,13 @@ import Logo from './homeScreen/Logo'
 import VsCPU from './homeScreen/VsCPU'
 import TwoPlayer from './homeScreen/TwoPlayer'
 import GameRules from './homeScreen/GameRules'
+import { useDisplayHome } from '../context/DisplayHome'
+import { useCompetition } from '../context/Competition'
 
-function HomeScreen({hideHome}) {
+function HomeScreen() {
+
+    const { hideHome } = useDisplayHome()
+    const { setCompetition, setTimer, startTimer } = useCompetition()
 
     const handleRulesClick = (e) => {
         // hide the home screen
@@ -18,6 +23,8 @@ function HomeScreen({hideHome}) {
         document.getElementById('gameOnWrapper').classList.remove('hidden')
         document.getElementById('gameOnWrapper').classList.add('xl:flex', 'xl:flex-col', 'xl:justify-end')
         document.getElementById('mainContainer').classList.add('md:h-full', 'xl:h-screen')
+        setCompetition('CPU')
+        startTimer()
     }
 
     const handleTwoClick = (e) => {
@@ -25,8 +32,9 @@ function HomeScreen({hideHome}) {
         document.getElementById('gameOnWrapper').classList.remove('hidden')
         document.getElementById('gameOnWrapper').classList.add('xl:flex', 'xl:flex-col', 'xl:justify-end')
         document.getElementById('mainContainer').classList.add('md:h-full', 'xl:h-screen')
+        setCompetition('Human')
+        startTimer()
     }
-
     
   return (
     <>

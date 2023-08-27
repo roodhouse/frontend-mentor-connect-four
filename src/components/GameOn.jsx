@@ -1,12 +1,42 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import GameOnHeader from './gameOn/GameOnHeader'
 import PlayerCard from './gameOn/PlayerCard'
 import GameGrid from './gameOn/GameGrid'
 import BottomCard from './gameOn/BottomCard'
 import Pause from './gameOn/Pause'
 import Marker from './gameOn/Marker'
+import { useCompetition } from '../context/Competition'
 
 function GameOn() {
+
+    const { marker, turn, columns } = useCompetition()
+
+    useEffect(() => {
+        let theMarkers = document.querySelectorAll('.aMarker')
+        theMarkers = Array.from(theMarkers)
+
+        theMarkers.forEach((mark) => {
+            if (mark.style.display !== 'none') {
+                if ( turn === 'Player1') {
+                    mark.classList.remove('bg-[url("./assets/images/marker-yellow.svg")]')
+                    mark.classList.add('bg-transparent')
+                } else {
+                    console.log('player2')
+                    mark.classList.remove('bg-[url("./assets/images/marker-red.svg")]')
+                    mark.classList.add('bg-transparent')
+                }
+            }  
+                if (mark.id === marker) {
+                    mark.classList.remove('bg-transparent')
+                    if (turn === 'Player1') {
+                        mark.classList.add('bg-[url("./assets/images/marker-red.svg")]')
+                    } else {
+                        mark.classList.add('bg-[url("./assets/images/marker-yellow.svg")]')
+                    }
+                }
+        })
+    },[turn, marker])
+    
   return (
     <>
         <div id="gameOnContainer">
