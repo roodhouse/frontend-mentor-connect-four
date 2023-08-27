@@ -291,9 +291,17 @@ const CompetitionProvider = ({ children }) => {
 
         let playerOneWin = Object.values(ways2win).some(combination => combination.split(',').every(item => playerOneItems.includes(item)))
 
-        console.log(playerOneWin)
-
         // set condition here for if playerOneWin is true
+        if (playerOneWin) {
+            console.log('player one wins')
+            // stop timer
+            setPlayerOneArray([])
+            stopTimer()
+            console.log('stopped')
+            // hide the timer
+            // display the win card
+            // increment player 1 score by 1
+        }
 
 
     return (
