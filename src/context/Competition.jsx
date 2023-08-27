@@ -212,8 +212,88 @@ const CompetitionProvider = ({ children }) => {
         // reset marker
         setMarker('marker5')
         startTimer()
-
       }
+
+      // win logic
+      let ways2win = 
+        {
+            row01: 'parentCircle-35,parentCircle-36,parentCircle-37,parentCircle-38',
+            row02: 'parentCircle-28,parentCircle-29,parentCircle-30,parentCircle-31',
+            row03: 'parentCircle-21,parentCircle-22,parentCircle-23,parentCircle-24',
+            row04: 'parentCircle-14,parentCircle-15,parentCircle-16,parentCircle-17',
+            row05: 'parentCircle-7,parentCircle-8,parentCircle-9,parentCircle-10',
+            row06: 'parentCircle-0,parentCircle-1,parentCircle-2,parentCircle-3',
+            row07: 'parentCircle-36,parentCircle-37,parentCircle-38,parentCircle-39',
+            row08: 'parentCircle-29,parentCircle-30,parentCircle-31,parentCircle-32',
+            row09: 'parentCircle-22,parentCircle-23,parentCircle-24,parentCircle-25',
+            row10: 'parentCircle-15,parentCircle-16,parentCircle-17,parentCircle-18',
+            row11: 'parentCircle-8,parentCircle-8,parentCircle-10,parentCircle-11',
+            row12: 'parentCircle-1,parentCircle-2,parentCircle-3,parentCircle-4',
+            row13: 'parentCircle-37,parentCircle-38,parentCircle-39,parentCircle-40',
+            row14: 'parentCircle-30,parentCircle-31,parentCircle-32,parentCircle-33',
+            row15: 'parentCircle-23,parentCircle-24,parentCircle-25,parentCircle-26',
+            row16: 'parentCircle-16,parentCircle-17,parentCircle-18,parentCircle-19',
+            row17: 'parentCircle-9,parentCircle-10,parentCircle-11,parentCircle-12',
+            row18: 'parentCircle-2,parentCircle-3,parentCircle-4,parentCircle-5',
+            row19: 'parentCircle-38,parentCircle-39,parentCircle-40,parentCircle-41',
+            row20: 'parentCircle-31,parentCircle-32,parentCircle-33,parentCircle-34',
+            row21: 'parentCircle-24,parentCircle-25,parentCircle-26,parentCircle-27',
+            row22: 'parentCircle-17,parentCircle-18,parentCircle-19,parentCircle-20',
+            row23: 'parentCircle-10,parentCircle-11,parentCircle-12,parentCircle-13',
+            row24: 'parentCircle-3,parentCircle-4,parentCircle-5,parentCircle-6',
+            col01: 'parentCircle-35,parentCircle-28,parentCircle-21,parentCircle-14',
+            col02: 'parentCircle-36,parentCircle-29,parentCircle-22,parentCircle-15',
+            col03: 'parentCircle-37,parentCircle-30,parentCircle-23,parentCircle-16',
+            col04: 'parentCircle-38,parentCircle-31,parentCircle-24,parentCircle-17',
+            col05: 'parentCircle-39,parentCircle-32,parentCircle-25,parentCircle-18',
+            col06: 'parentCircle-40,parentCircle-33,parentCircle-26,parentCircle-19',
+            col07: 'parentCircle-41,parentCircle-34,parentCircle-27,parentCircle-20',
+            col08: 'parentCircle-28,parentCircle-21,parentCircle-14,parentCircle-7',
+            col09: 'parentCircle-29,parentCircle-22,parentCircle-15,parentCircle-8',
+            col10: 'parentCircle-30,parentCircle-23,parentCircle-16,parentCircle-9',
+            col11: 'parentCircle-31,parentCircle-24,parentCircle-17,parentCircle-10',
+            col12: 'parentCircle-32,parentCircle-25,parentCircle-18,parentCircle-11',
+            col13: 'parentCircle-33,parentCircle-26,parentCircle-19,parentCircle-12',
+            col14: 'parentCircle-34,parentCircle-27,parentCircle-20,parentCircle-13',
+            col15: 'parentCircle-21,parentCircle-14,parentCircle-7,parentCircle-0',
+            col16: 'parentCircle-22,parentCircle-15,parentCircle-8,parentCircle-1',
+            col17: 'parentCircle-23,parentCircle-16,parentCircle-9,parentCircle-2',
+            col18: 'parentCircle-24,parentCircle-17,parentCircle-10,parentCircle-3',
+            col19: 'parentCircle-25,parentCircle-18,parentCircle-11,parentCircle-4',
+            col20: 'parentCircle-26,parentCircle-19,parentCircle-12,parentCircle-5',
+            col21: 'parentCircle-27,parentCircle-20,parentCircle-13,parentCircle-6',
+            dia01: 'parentCircle-35,parentCircle-29,parentCircle-23,parentCircle-17',
+            dia02: 'parentCircle-36,parentCircle-30,parentCircle-24,parentCircle-18',
+            dia03: 'parentCircle-37,parentCircle-31,parentCircle-25,parentCircle-19',
+            dia04: 'parentCircle-38,parentCircle-32,parentCircle-26,parentCircle-20',
+            dia05: 'parentCircle-28,parentCircle-22,parentCircle-16,parentCircle-10',
+            dia06: 'parentCircle-29,parentCircle-23,parentCircle-17,parentCircle-11',
+            dia07: 'parentCircle-30,parentCircle-24,parentCircle-18,parentCircle-12',
+            dia08: 'parentCircle-31,parentCircle-25,parentCircle-19,parentCircle-13',
+            dia09: 'parentCircle-22,parentCircle-16,parentCircle-10,parentCircle-4',
+            dia10: 'parentCircle-23,parentCircle-17,parentCircle-11,parentCircle-5',
+            dia11: 'parentCircle-24,parentCircle-18,parentCircle-12,parentCircle-6',
+            dia12: 'parentCircle-41,parentCircle-33,parentCircle-25,parentCircle-17',
+            dia13: 'parentCircle-40,parentCircle-32,parentCircle-24,parentCircle-16',
+            dia14: 'parentCircle-39,parentCircle-31,parentCircle-23,parentCircle-15',
+            dia15: 'parentCircle-38,parentCircle-30,parentCircle-22,parentCircle-14',
+            dia16: 'parentCircle-34,parentCircle-26,parentCircle-18,parentCircle-10',
+            dia17: 'parentCircle-33,parentCircle-25,parentCircle-17,parentCircle-9',
+            dia18: 'parentCircle-32,parentCircle-24,parentCircle-16,parentCircle-8',
+            dia19: 'parentCircle-27,parentCircle-19,parentCircle-11,parentCircle-3',
+            dia20: 'parentCircle-26,parentCircle-18,parentCircle-10,parentCircle-2',
+            dia21: 'parentCircle-25,parentCircle-17,parentCircle-9,parentCircle-1',
+            dia22: 'parentCircle-24,parentCircle-16,parentCircle-8,parentCircle-0',
+        }
+
+        let playerOneArrayString = playerOneArray.toString()
+        let playerOneItems = playerOneArrayString.split(',')
+
+        let playerOneWin = Object.values(ways2win).some(combination => combination.split(',').every(item => playerOneItems.includes(item)))
+
+        console.log(playerOneWin)
+
+        // set condition here for if playerOneWin is true
 
 
     return (
