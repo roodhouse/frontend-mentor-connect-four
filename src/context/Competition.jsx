@@ -284,6 +284,7 @@ const CompetitionProvider = ({ children }) => {
             dia20: 'parentCircle-26,parentCircle-18,parentCircle-10,parentCircle-2',
             dia21: 'parentCircle-25,parentCircle-17,parentCircle-9,parentCircle-1',
             dia22: 'parentCircle-24,parentCircle-16,parentCircle-8,parentCircle-0',
+            dia23: 'parentCircle-31,parentCircle-23,parentCircle-15,parentCircle-7',
         }
 
         // Player one win

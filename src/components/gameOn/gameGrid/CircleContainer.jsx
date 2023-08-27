@@ -1,8 +1,6 @@
 import React from 'react'
 import { useCompetition } from '../../../context/Competition'
 
-// need condition for win the winner is true in order to stop the reset of the timer
-
 function CircleContainer({index}) {
 
   const { turn, setTurn, columns, setMarker, playerOneArray, setPlayerOneArray, 
