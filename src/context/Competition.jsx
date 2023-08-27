@@ -14,7 +14,7 @@ const CompetitionProvider = ({ children }) => {
     const [ playerOneArray, setPlayerOneArray ] = useState([])
     const [ playerTwoArray, setPlayerTwoArray ] = useState([])
     const [ allowedToClick, setAllowedToClick ] = useState(['parentCircle-35', 'parentCircle-36', 'parentCircle-37', 'parentCircle-38', 'parentCircle-39', 'parentCircle-40', 'parentCircle-41'])
-    const [ timer, setTimer ] = useState(3)
+    const [ timer, setTimer ] = useState(30)
     const [ intervalId, setIntervalId ] = useState(null)
     const [ winner, setWinner ] = useState(null)
     const [ firstTurn, setFirstTurn ] = useState('Player1')
@@ -286,6 +286,7 @@ const CompetitionProvider = ({ children }) => {
             dia22: 'parentCircle-24,parentCircle-16,parentCircle-8,parentCircle-0',
         }
 
+        // Player one win
         let playerOneArrayString = playerOneArray.toString()
         let playerOneItems = playerOneArrayString.split(',')
 
@@ -294,13 +295,31 @@ const CompetitionProvider = ({ children }) => {
         // set condition here for if playerOneWin is true
         if (playerOneWin) {
             console.log('player one wins')
-            // stop timer
+            setWinner('Player1')
+            setPlayerOneArray([])
+            setPlayerTwoArray([])
+            stopTimer()
+            console.log('stopped')
+            let score = playerOneScore + 1
+            setPlayerOneScore(score)
+        }
+
+        // Player two or cpu win
+        let playerTwoArrayString = playerTwoArray.toString()
+        let playerTwoItems = playerTwoArrayString.split(',')
+
+        let playerTwoWin = Object.values(ways2win).some(combination => combination.split(',').every(item => playerTwoItems.includes(item)))
+
+        // set condition here for if playerOneWin is true
+        if (playerTwoWin) {
+            console.log('player two wins')
+            setWinner('Player2')
+            setPlayerTwoArray([])
             setPlayerOneArray([])
             stopTimer()
             console.log('stopped')
-            // hide the timer
-            // display the win card
-            // increment player 1 score by 1
+            let score = playerTwoCpuScore + 1
+            setPlayerTwoCpuScore(score)
         }
 
 

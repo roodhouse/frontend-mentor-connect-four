@@ -32,8 +32,12 @@ function BottomCard() {
       document.getElementById('bottomCardContainer').style.backgroundColor = '#5C2DD5'
     } else if (  winner === 'Player1') {
       document.getElementById('bottomCardContainer').style.backgroundColor = '#FD6687'
+      document.getElementById('playerBottomCardWrapper').classList.add('hidden')
+      document.getElementById('winCardWrapper').classList.remove('hidden')
     } else {
       document.getElementById('bottomCardContainer').style.backgroundColor = '#FFCE67'
+      document.getElementById('playerBottomCardWrapper').classList.add('hidden')
+      document.getElementById('winCardWrapper').classList.remove('hidden')
     }
   }, [winner])
 
