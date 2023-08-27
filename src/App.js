@@ -8,13 +8,11 @@ import GameOn from './components/GameOn';
 
 // bug 1: height issue
 // bug 2: z-index issue on grid in small screens
-
-// logic
-// all button logic
-    // win logic
-      // display circles of 4 pieces that won
       
 // vs cpu logic
+
+// check all button logic and game  reset/restarts
+
 
 // animation
 

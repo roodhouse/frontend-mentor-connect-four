@@ -167,6 +167,19 @@ const CompetitionProvider = ({ children }) => {
         }
       }
 
+      function clearWinningCircles() {
+        const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
+            winnerCircleWrapper.classList.replace('z-[100]', 'z-30')
+        let allCircles = document.querySelectorAll('.winningCircle')
+        
+        allCircles.forEach((circle) => {
+            if ( circle.classList.contains('border-white')) {
+                console.log(circle)
+                circle.classList.replace('border-white', 'border-transparent')
+            }
+        })
+      }
+
       // restart click
       const restart = () => {
         // clear the current player piece array
@@ -178,6 +191,7 @@ const CompetitionProvider = ({ children }) => {
         resetTimer()
         // reset board to all blanks
         clearNonEmptyBackgrounds()
+        clearWinningCircles()
         // reset marker
         setMarker('marker5')
         startTimer()
@@ -209,9 +223,11 @@ const CompetitionProvider = ({ children }) => {
         resetTimer()
         // reset board to all blanks
         clearNonEmptyBackgrounds()
+        clearWinningCircles()
         // reset marker
         setMarker('marker5')
         startTimer()
+
       }
 
       // win logic
@@ -291,11 +307,20 @@ const CompetitionProvider = ({ children }) => {
         let playerOneArrayString = playerOneArray.toString()
         let playerOneItems = playerOneArrayString.split(',')
 
-        let playerOneWin = Object.values(ways2win).some(combination => combination.split(',').every(item => playerOneItems.includes(item)))
+        let playerOneWinningPieces = [];
+        let playerOneWin = Object.entries(ways2win).some(([combinationName, combination]) => {
+            const items = combination.split(',');
+            const isWin = items.every(item => playerOneItems.includes(item));
+            if (isWin) {
+            playerOneWinningPieces = [...playerOneWinningPieces, ...items];
+            }
+            return isWin;
+        });
 
         // set condition here for if playerOneWin is true
         if (playerOneWin) {
             console.log('player one wins')
+            console.log(playerOneWinningPieces)
             setWinner('Player1')
             setPlayerOneArray([])
             setPlayerTwoArray([])
@@ -303,17 +328,39 @@ const CompetitionProvider = ({ children }) => {
             console.log('stopped')
             let score = playerOneScore + 1
             setPlayerOneScore(score)
+            // playerOneWinningPieces.forEach((piece) => {
+            //     // exchange parentCircle for winnerCircle
+            //     console.log(document.getElementById(piece))
+            // })
+            const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
+            winnerCircleWrapper.classList.replace('z-30', 'z-[100]')
+            const winningCircles = playerOneWinningPieces.map(piece => piece.replace('parent', 'winner'))
+
+            winningCircles.forEach((piece) => {
+                let whiteCircle = document.getElementById(piece)
+                whiteCircle.classList.remove('border-transparent')
+                whiteCircle.classList.add('border-white')
+            })
         }
 
         // Player two or cpu win
         let playerTwoArrayString = playerTwoArray.toString()
         let playerTwoItems = playerTwoArrayString.split(',')
 
-        let playerTwoWin = Object.values(ways2win).some(combination => combination.split(',').every(item => playerTwoItems.includes(item)))
+        let playerTwoWinningPieces = [];
+        let playerTwoWin = Object.entries(ways2win).some(([combinationName, combination]) => {
+            const items = combination.split(',');
+            const isWin = items.every(item => playerTwoItems.includes(item));
+            if (isWin) {
+            playerTwoWinningPieces = [...playerTwoWinningPieces, ...items];
+            }
+            return isWin;
+        });
 
         // set condition here for if playerOneWin is true
         if (playerTwoWin) {
             console.log('player two wins')
+            console.log(playerTwoWinningPieces)
             setWinner('Player2')
             setPlayerTwoArray([])
             setPlayerOneArray([])
@@ -321,6 +368,16 @@ const CompetitionProvider = ({ children }) => {
             console.log('stopped')
             let score = playerTwoCpuScore + 1
             setPlayerTwoCpuScore(score)
+
+            const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
+            winnerCircleWrapper.classList.replace('z-30', 'z-[100]')
+            const winningCircles = playerTwoWinningPieces.map(piece => piece.replace('parent', 'winner'))
+
+            winningCircles.forEach((piece) => {
+                let whiteCircle = document.getElementById(piece)
+                whiteCircle.classList.remove('border-transparent')
+                whiteCircle.classList.add('border-white')
+            })
         }
 
 
