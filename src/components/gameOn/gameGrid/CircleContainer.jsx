@@ -15,6 +15,7 @@ function CircleContainer({index}) {
           if (pieceArray[1] > 6) {
             let newClickable = pieceArray[1] - 7
             newClickable = 'parentCircle-'+newClickable
+            
             let newArray = allowedToClick.filter((item) => item !== pieceId ) 
             newArray.push(newClickable)
             setAllowedToClick(newArray)

@@ -18,6 +18,7 @@ const CompetitionProvider = ({ children }) => {
     const [ intervalId, setIntervalId ] = useState(null)
     const [ winner, setWinner ] = useState(null)
     const [ firstTurn, setFirstTurn ] = useState('Player1')
+    const [ newGame, setNewGame ] = useState(false)
 
     const cardStyle = () => {
         if ( turn === 'Player1') {
@@ -98,38 +99,59 @@ const CompetitionProvider = ({ children }) => {
     }
 
     // vs cpu logic
-    if ( competition === 'CPU') {
-        
-        // on first click it is adding the correct element to the array
-        // on the 2nd click it has removed the element and kept the random selection item in the array....
-
-
-        if ( turn === 'Player2') {
-            console.log(allowedToClick)
-            // select a random piece from the allowedToClick array
-            if ( allowedToClick.length === 7 ) {
-                const randomIndex = Math.floor(Math.random() * allowedToClick.length);
-                const randomSelection = allowedToClick[randomIndex];
-                // remove item from allowedToClick
-                setAllowedToClick(allowedToClick.pop(randomSelection))
-                console.log(randomSelection)
-                console.log(allowedToClick)
-                // add new item to allowedToClickArray
-                let pieceArray = (randomSelection.split('-'))
-                if (pieceArray[1] > 6) {
-                let newClickable = pieceArray[1] - 7
-                newClickable = 'parentCircle-'+newClickable
-                setAllowedToClick([...allowedToClick, newClickable])
-                setTurn('Player1')
-          }
-
+    useEffect(() => {
+        if ( competition === 'CPU') {
+            console.log('at top of useEffect')
+            if (newGame) {
+                setNewGame(false)
             }
-            
+            if ( turn === 'Player2') {
+                if ( winner === null ) {
+                    console.log(`winner is ${winner}`)
+                    // select a random piece from the allowedToClick array
+                    if ( allowedToClick.length === 7 ) {
+                        console.log('here')
+                        const randomIndex = Math.floor(Math.random() * allowedToClick.length);
+                        const randomSelection = allowedToClick[randomIndex];
+                        // remove item from allowedToClick
+                        setAllowedToClick(prevAllowedToClick => prevAllowedToClick.filter((item) => item !== randomSelection))
+        
+                        let timeout = [1000,2000,3000,4000]
+                        let timeoutIndex = Math.floor(Math.random() * timeout.length)
+                        console.log(timeout[timeoutIndex])
+                        setTimeout(() => {
+                            // change background
+                            let randomSelectionDiv = document.getElementById(randomSelection)
+                            if ( window.innerWidth < 768 ) {
+                                randomSelectionDiv.style.background = 'url("./assets/images/counter-yellow-small.svg")'
+                                randomSelectionDiv.style.backgroundSize = 'contain'
+                                randomSelectionDiv.style.backgroundRepeat = 'no-repeat'
+                              } else if ( window.innerWidth >= 768 ) {
+                                randomSelectionDiv.style.background = 'url("./assets/images/counter-yellow-large.svg")'
+                                randomSelectionDiv.style.backgroundSize = 'contain'
+                                randomSelectionDiv.style.backgroundRepeat = 'no-repeat'
+                              }
+                              // add new item to allowedToClickArray
+                              setAllowedToClick(prevAllowedToClick => {
+                                  let pieceArray = randomSelection.split('-')
+                                  if (pieceArray[1] > 6) {
+                                      let newClickable = pieceArray[1] - 7
+                                      newClickable = 'parentCircle-' + newClickable
+                                      return [...prevAllowedToClick, newClickable]
+                                  }
+                                  return [prevAllowedToClick]
+                              })
+                                  setTurn('Player1')
+                        }, timeout[timeoutIndex])
+                    } 
+                } else if ( winner !== null ) {
+                    console.log('winner found')
+                }
+            }
         }
-    }
+    }, [turn, newGame])
 
     // timer functions
-
     const intervalIdRef = useRef(null)
 
     const startTimer = () => {
@@ -245,6 +267,7 @@ const CompetitionProvider = ({ children }) => {
         }
         // set the winner back to null
         setWinner(null)
+        setNewGame(true)
         // clear the current player piece array
         setPlayerOneArray([])
         setPlayerTwoArray([])
