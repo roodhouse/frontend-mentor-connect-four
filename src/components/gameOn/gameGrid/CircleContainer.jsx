@@ -9,14 +9,16 @@ function CircleContainer({index}) {
   const handleClick = (e) => {
     const tile = e.target
     let pieceId = tile.id
-    console.log(winner)
     if ( winner === null ) {
       if ( allowedToClick.includes(pieceId)) {
         let pieceArray = (pieceId.split('-'))
           if (pieceArray[1] > 6) {
             let newClickable = pieceArray[1] - 7
             newClickable = 'parentCircle-'+newClickable
-            setAllowedToClick([...allowedToClick, newClickable])
+            
+            let newArray = allowedToClick.filter((item) => item !== pieceId ) 
+            newArray.push(newClickable)
+            setAllowedToClick(newArray)
           }
     
         if ( tile.style.background === '') {
