@@ -10,13 +10,19 @@ function CircleContainer({index}) {
     const tile = e.target
     let pieceId = tile.id
     console.log(winner)
+    console.log(allowedToClick)
     if ( winner === null ) {
       if ( allowedToClick.includes(pieceId)) {
         let pieceArray = (pieceId.split('-'))
           if (pieceArray[1] > 6) {
             let newClickable = pieceArray[1] - 7
             newClickable = 'parentCircle-'+newClickable
-            setAllowedToClick([...allowedToClick, newClickable])
+            let newArray = allowedToClick.filter((item) => item !== pieceId ) 
+            // error around here somewhere
+            console.log(`new allowed to click: ${newArray}`)
+            newArray.push(newClickable)
+            console.log(`new allowed to click with new item: ${newArray}`)
+            setAllowedToClick(newClickable)
           }
     
         if ( tile.style.background === '') {

@@ -97,6 +97,29 @@ const CompetitionProvider = ({ children }) => {
         col7: ['marker-6','parentCircle-6','parentCircle-13','parentCircle-20','parentCircle-27','parentCircle-34','parentCircle-41'],
     }
 
+    // vs cpu logic
+    if ( competition === 'CPU') {
+        if ( turn === 'Player2') {
+            console.log(allowedToClick)
+            // select a random piece from the allowedToClick array
+            if ( allowedToClick.length !== 7 ) {
+                const randomIndex = Math.floor(Math.random() * allowedToClick.length);
+                const randomSelection = allowedToClick[randomIndex];
+
+                console.log(randomSelection)
+                // add new item to allowedToClickArray
+        //         let pieceArray = (pieceId.split('-'))
+        //   if (pieceArray[1] > 6) {
+        //     let newClickable = pieceArray[1] - 7
+        //     newClickable = 'parentCircle-'+newClickable
+        //     setAllowedToClick([...allowedToClick, newClickable])
+        //   }
+
+            }
+            
+        }
+    }
+
     // timer functions
 
     const intervalIdRef = useRef(null)
