@@ -99,21 +99,29 @@ const CompetitionProvider = ({ children }) => {
 
     // vs cpu logic
     if ( competition === 'CPU') {
+        
+        // on first click it is adding the correct element to the array
+        // on the 2nd click it has removed the element and kept the random selection item in the array....
+
+
         if ( turn === 'Player2') {
             console.log(allowedToClick)
             // select a random piece from the allowedToClick array
-            if ( allowedToClick.length !== 7 ) {
+            if ( allowedToClick.length === 7 ) {
                 const randomIndex = Math.floor(Math.random() * allowedToClick.length);
                 const randomSelection = allowedToClick[randomIndex];
-
+                // remove item from allowedToClick
+                setAllowedToClick(allowedToClick.pop(randomSelection))
                 console.log(randomSelection)
+                console.log(allowedToClick)
                 // add new item to allowedToClickArray
-        //         let pieceArray = (pieceId.split('-'))
-        //   if (pieceArray[1] > 6) {
-        //     let newClickable = pieceArray[1] - 7
-        //     newClickable = 'parentCircle-'+newClickable
-        //     setAllowedToClick([...allowedToClick, newClickable])
-        //   }
+                let pieceArray = (randomSelection.split('-'))
+                if (pieceArray[1] > 6) {
+                let newClickable = pieceArray[1] - 7
+                newClickable = 'parentCircle-'+newClickable
+                setAllowedToClick([...allowedToClick, newClickable])
+                setTurn('Player1')
+          }
 
             }
             
