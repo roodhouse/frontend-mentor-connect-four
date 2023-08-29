@@ -6,8 +6,6 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// bug 2: z-index issue on grid in small screens
-
 // animation
 
 
