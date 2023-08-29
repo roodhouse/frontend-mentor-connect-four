@@ -142,6 +142,26 @@ const CompetitionProvider = ({ children }) => {
                                   }
                                   return [prevAllowedToClick]
                               })
+                              // set marker
+                              let columnIndex = -1
+                              console.log(randomSelection)
+                              for (const [colName, columnItems] of Object.entries(columns)) {
+                                console.log(colName, columnItems)
+                                if (columnItems.includes(randomSelection)) {
+                                    columnIndex = parseInt(colName.slice(3), 10)
+                                    console.log(columnIndex)
+                                    break;
+                                }
+                                    console.log(columnIndex)
+                                }
+                                if (columnIndex !== -1) {
+                                    console.log('iam')
+                                    let markerCol = `col${columnIndex}`
+                                    console.log(`marker col: ${markerCol}`)
+                                    setMarker(columns[markerCol][0])
+                                } else {
+                                    console.log('not found')
+                                }
                                   setTurn('Player1')
                                   resetTimer()
                         }, timeout[timeoutIndex])

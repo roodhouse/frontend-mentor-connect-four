@@ -8,7 +8,7 @@ import GameOn from './components/GameOn';
 
 // bug 1: height issue
 // bug 2: z-index issue on grid in small screens
-// bug 3: when playing cpu the marker does not change when the cpu selects
+
       
 // check all button logic and game  reset/restarts -- here
 // animation
