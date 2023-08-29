@@ -19,6 +19,7 @@ const CompetitionProvider = ({ children }) => {
     const [ winner, setWinner ] = useState(null)
     const [ firstTurn, setFirstTurn ] = useState('Player1')
     const [ newGame, setNewGame ] = useState(false)
+    const [ paused, setPaused ] = useState(false)
 
     const cardStyle = () => {
         if ( turn === 'Player1') {
@@ -441,7 +442,7 @@ const CompetitionProvider = ({ children }) => {
         cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
         marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, 
         setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, 
-        resetTimer, pauseTimer, winner, setWinner, restart, playAgain }}>
+        resetTimer, pauseTimer, winner, setWinner, restart, playAgain, setPaused }}>
             {children}
         </CompetitionContext.Provider>
     )

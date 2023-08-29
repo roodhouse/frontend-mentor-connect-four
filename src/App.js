@@ -8,6 +8,7 @@ import GameOn from './components/GameOn';
 
 // bug 1: height issue
 // bug 2: z-index issue on grid in small screens
+// bug 3: timer does not reset during game 2 move 1
       
 // check all button logic and game  reset/restarts -- here
 // animation
