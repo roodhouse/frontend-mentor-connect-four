@@ -143,6 +143,7 @@ const CompetitionProvider = ({ children }) => {
                                   return [prevAllowedToClick]
                               })
                                   setTurn('Player1')
+                                  resetTimer()
                         }, timeout[timeoutIndex])
                     } 
                 } else if ( winner !== null ) {
