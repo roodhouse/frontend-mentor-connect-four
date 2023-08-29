@@ -9,7 +9,7 @@ import { useCompetition } from '../context/Competition'
 function HomeScreen() {
 
     const { hideHome } = useDisplayHome()
-    const { setCompetition, setTimer, startTimer } = useCompetition()
+    const { setCompetition, setTimer, startTimer, setGameOn } = useCompetition()
 
     const handleRulesClick = (e) => {
         // hide the home screen
@@ -25,6 +25,7 @@ function HomeScreen() {
         document.getElementById('mainContainer').classList.add('md:h-full', 'xl:h-screen')
         setCompetition('CPU')
         startTimer()
+        setGameOn(true)
     }
 
     const handleTwoClick = (e) => {
@@ -34,6 +35,7 @@ function HomeScreen() {
         document.getElementById('mainContainer').classList.add('md:h-full', 'xl:h-screen')
         setCompetition('Human')
         startTimer()
+        setGameOn(true)
     }
     
   return (

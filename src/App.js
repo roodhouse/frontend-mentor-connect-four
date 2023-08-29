@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DisplayHomeProvider } from './context/DisplayHome';
-import { CompetitionProvider } from './context/Competition';
+import { CompetitionProvider, useCompetition } from './context/Competition';
 import './App.css';
 import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// bug 1: height issue --- here
 // bug 2: z-index issue on grid in small screens
 
 // animation
@@ -14,6 +13,17 @@ import GameOn from './components/GameOn';
 
 
 function App() {
+
+  useEffect(() => {
+    if ( window.innerHeight < 475 ) {
+      console.log(window.innerHeight)
+      document.getElementById('mainContainer').classList.remove('h-screen')
+      document.getElementById('mainContainer').classList.add('h-full', 'pb-10', 'pt-10')
+      document.getElementById('mainContainer').classList.replace('md:pt-0','md:pt-10')
+    }
+  },[])
+
+  
 
   return (
     <CompetitionProvider>

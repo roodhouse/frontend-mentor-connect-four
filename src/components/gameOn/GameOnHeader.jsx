@@ -13,6 +13,11 @@ function GameOnHeader() {
         if (competition === 'CPU' && turn === 'Player2' ) {
             return
         } else {
+            if ( window.innerHeight < 475 ) {
+                document.getElementById('pauseMenuContainer').classList.replace('top-0', 'top-[100px]')    
+                document.getElementById('pauseLightBox').classList.replace('h-screen', 'h-[855px]')
+            }
+
             document.getElementById('pauseMenuWrapper').classList.remove('hidden')
             document.getElementById('pauseMenuContainer').classList.add('z-[101]')
             pauseTimer() 
