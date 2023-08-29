@@ -6,11 +6,9 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// bug 1: height issue
+// bug 1: height issue --- here
 // bug 2: z-index issue on grid in small screens
 
-      
-// check all button logic and game  reset/restarts -- here
 // animation
 
 
