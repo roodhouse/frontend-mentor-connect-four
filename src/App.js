@@ -7,7 +7,7 @@ import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
 // animation
-
+  // see chatgpt about suggestions on see through circles
 
 
 function App() {
