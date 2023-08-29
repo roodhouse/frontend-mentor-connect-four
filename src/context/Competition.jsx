@@ -19,6 +19,7 @@ const CompetitionProvider = ({ children }) => {
     const [ winner, setWinner ] = useState(null)
     const [ firstTurn, setFirstTurn ] = useState('Player1')
     const [ newGame, setNewGame ] = useState(false)
+    const [ paused, setPaused ] = useState(false)
 
     const cardStyle = () => {
         if ( turn === 'Player1') {
@@ -141,7 +142,28 @@ const CompetitionProvider = ({ children }) => {
                                   }
                                   return [prevAllowedToClick]
                               })
+                              // set marker
+                              let columnIndex = -1
+                              console.log(randomSelection)
+                              for (const [colName, columnItems] of Object.entries(columns)) {
+                                console.log(colName, columnItems)
+                                if (columnItems.includes(randomSelection)) {
+                                    columnIndex = parseInt(colName.slice(3), 10)
+                                    console.log(columnIndex)
+                                    break;
+                                }
+                                    console.log(columnIndex)
+                                }
+                                if (columnIndex !== -1) {
+                                    console.log('iam')
+                                    let markerCol = `col${columnIndex}`
+                                    console.log(`marker col: ${markerCol}`)
+                                    setMarker(columns[markerCol][0])
+                                } else {
+                                    console.log('not found')
+                                }
                                   setTurn('Player1')
+                                  resetTimer()
                         }, timeout[timeoutIndex])
                     } 
                 } else if ( winner !== null ) {
@@ -441,7 +463,7 @@ const CompetitionProvider = ({ children }) => {
         cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
         marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, 
         setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, 
-        resetTimer, pauseTimer, winner, setWinner, restart, playAgain }}>
+        resetTimer, pauseTimer, winner, setWinner, restart, playAgain, setPaused }}>
             {children}
         </CompetitionContext.Provider>
     )

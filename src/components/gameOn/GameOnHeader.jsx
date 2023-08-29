@@ -6,12 +6,17 @@ import { useCompetition } from '../../context/Competition'
 
 function GameOnHeader() {
 
-    const { pauseTimer, restart } = useCompetition()
+    const { pauseTimer, restart, competition, turn } = useCompetition()
 
     const handleMenuClick = () => {
-        document.getElementById('pauseMenuWrapper').classList.remove('hidden')
-        document.getElementById('pauseMenuContainer').classList.add('z-[101]')
-        pauseTimer() 
+        console.log(competition)
+        if (competition === 'CPU' && turn === 'Player2' ) {
+            return
+        } else {
+            document.getElementById('pauseMenuWrapper').classList.remove('hidden')
+            document.getElementById('pauseMenuContainer').classList.add('z-[101]')
+            pauseTimer() 
+        }
     }
 
 

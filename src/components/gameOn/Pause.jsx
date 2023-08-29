@@ -22,6 +22,7 @@ function Pause() {
     }
 
   const handleQuit = (e) => {
+    restart()
     displayHome()
     // hide pause module
     document.getElementById('pauseMenuWrapper').classList.add('hidden')
