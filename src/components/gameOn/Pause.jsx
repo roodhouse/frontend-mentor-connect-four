@@ -9,7 +9,7 @@ import { useCompetition } from '../../context/Competition'
 function Pause() {
 
     const { displayHome } = useDisplayHome()
-    const { playerOneScore, setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, startTimer, restart } = useCompetition()
+    const { playerOneScore, setPlayerOneScore, playerTwoCpuScore, setPlayerTwoCpuScore, startTimer, restart, setGameOn } = useCompetition()
 
     const handleContinueClick = () => {
         document.getElementById('pauseMenuWrapper').classList.add('hidden')
@@ -24,6 +24,7 @@ function Pause() {
   const handleQuit = (e) => {
     restart()
     displayHome()
+    setGameOn(false)
     // hide pause module
     document.getElementById('pauseMenuWrapper').classList.add('hidden')
     // hide game grid

@@ -9,7 +9,7 @@ import { useCompetition } from '../context/Competition'
 
 function GameOn() {
 
-    const { marker, turn, columns } = useCompetition()
+    const { marker, turn, columns, gameOn } = useCompetition()
 
     useEffect(() => {
         let theMarkers = document.querySelectorAll('.aMarker')
@@ -36,10 +36,19 @@ function GameOn() {
                 }
         })
     },[turn, marker])
+
+    useEffect(() => {
+        if ( window.innerHeight < 475 && gameOn ) {
+          
+            document.getElementById('mainContainer').classList.remove('pb-10')
+        } else if ( window.innerHeight < 475 && !gameOn) {
+            document.getElementById('mainContainer').classList.add('pb-10')
+        }
+      },[gameOn])
     
   return (
     <>
-        <div id="gameOnContainer">
+        <div id="gameOnContainer" className='bg-purple'>
             <div id="gameTopContainer" className='flex flex-col items-center'>
                 <div id="gameOnHeaderWrapper" className='max-w-[375px] md:max-w-[632px] w-full mb-[50px] px-5 md:mb-8 md:px-0 xl:mb-[17px] xl:relative z-20'>
                     <GameOnHeader />
