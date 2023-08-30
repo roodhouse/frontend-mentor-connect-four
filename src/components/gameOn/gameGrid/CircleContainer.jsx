@@ -88,41 +88,15 @@ function CircleContainer({index}) {
 
   const handleClick = (e) => {
    let circleLayerWrapper = e.target.parentElement
-  //  circleLayerWrapper.classList.replace('z-[100]', 'z-[15]')
     const clickX = e.clientX
     const clickY = e.clientY
     
     setCirclePosition({ x: clickX, y: clickY })
 
-    setTimeout(() => {
-      // circleLayerWrapper.classList.replace('z-[15]', 'z-[100]')
-      // find the all black circles and if they have a piece then change their box shadow to 0 
-
-      // error here 
-
-      
-      console.log(e.target)
-      let blackTarget = e.target.id.split('-')
-      blackTarget = blackTarget[1]
-      console.log(blackTarget)
-      blackTarget = 'blackCircle-' + blackTarget
-      console.log(blackTarget)
-      blackTarget = document.getElementById(blackTarget)
-      console.log(blackTarget)
-      blackTarget.style.boxShadow = '0px 0px 0px 0px'
-
-    }, 2200)
-
   }
-
-  // circleLayerWrapper z-index = 100 (where the game pieces are) on click this changes to z index of 15
-  // whiteGrid z-index = 10
-  // blackGrid z-index = 20
-  // winnerCircleWrapper z-index = 30 (only displays when a winner is found)
 
   return (
     <>
-        {/* <div id={'parentCircle-'+index} onClick={handleClick} className='w-[35px] h-[38px] rounded-[50%] md:w-16 md:h-16 md:ml-1 cursor-pointer' /> */}
         <div id={'parentCircle-'+index} onClick={handleClick} className='w-[35px] h-[38px] rounded-[50%] md:w-16 md:h-16 md:ml-1 cursor-pointer'>
 
           { circlePosition && (
