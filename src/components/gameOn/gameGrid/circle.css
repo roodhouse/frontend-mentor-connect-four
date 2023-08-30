@@ -1,5 +1,73 @@
+/* column 6 */
+
+#parentCircle-6 {
+    position: relative;
+    left: 2px;
+    top: -14px;
+}
+
+#parentCircle-40 {
+    position: relative;
+    left: 2px;
+    top: 7px;
+}
+
+#parentCircle-34 {
+    position: relative;
+    left: 2px;
+    top: 3px;
+}
+
+#parentCircle-27 {
+    position: relative;
+    left: 2px;
+}
+
+#parentCircle-20 {
+    position: relative;
+    left: 2px;
+    top: -6px;
+}
+
+#parentCircle-12 {
+    position: relative;
+    left: 2px;
+    top: -9px;
+}
+
+/* column 7 */
+
+#parentCircle-6 {
+    position: relative;
+    left: 6px;
+    top: -14px;
+}
+
+#parentCircle-13 {
+    position: relative;
+    left: 6px;
+    top: -9px;
+}
+
+#parentCircle-20 {
+    position: relative;
+    left: 6px;
+    top: -6px;
+}
+
+#parentCircle-27 {
+    position: relative;
+    left: 6px;
+}
+
+#parentCircle-34 {
+    position: relative;
+    left: 6px;
+    top: 3px;
+}
+
 #parentCircle-41 {
     position: relative;
-    left: 11px;
-    top: 13px;
+    left: 6px;
+    top: 7px;
 }
