@@ -100,6 +100,15 @@ const CompetitionProvider = ({ children }) => {
         col7: ['marker-6','parentCircle-6','parentCircle-13','parentCircle-20','parentCircle-27','parentCircle-34','parentCircle-41'],
     }
 
+    const rows = {
+        row1: ['parentCircle-35','parentCircle-36','parentCircle-37','parentCircle-38','parentCircle-39','parentCircle-40','parentCircle-41'],
+        row2: ['parentCircle-28','parentCircle-29','parentCircle-30','parentCircle-31','parentCircle-32','parentCircle-33','parentCircle-34',],
+        row3: ['parentCircle-21','parentCircle-22','parentCircle-23','parentCircle-24','parentCircle-25','parentCircle-26','parentCircle-27',],
+        row4: ['parentCircle-14','parentCircle-15','parentCircle-16','parentCircle-17','parentCircle-18','parentCircle-19','parentCircle-20',],
+        row5: ['parentCircle-7','parentCircle-8','parentCircle-9','parentCircle-10','parentCircle-11','parentCircle-12','parentCircle-13',],
+        row6: ['parentCircle-0','parentCircle-1','parentCircle-2','parentCircle-3','parentCircle-4','parentCircle-5','parentCircle-6',]
+    }
+
     // vs cpu logic
     useEffect(() => {
         if ( competition === 'CPU') {
@@ -464,7 +473,7 @@ const CompetitionProvider = ({ children }) => {
         cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
         marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, 
         setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, 
-        resetTimer, pauseTimer, winner, setWinner, restart, playAgain, setPaused, gameOn, setGameOn }}>
+        resetTimer, pauseTimer, winner, setWinner, restart, playAgain, setPaused, gameOn, setGameOn, rows }}>
             {children}
         </CompetitionContext.Provider>
     )

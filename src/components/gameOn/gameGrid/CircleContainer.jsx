@@ -9,7 +9,7 @@ import './circle.css'
 function CircleContainer({index}) {
 
   const { turn, setTurn, columns, setMarker, playerOneArray, setPlayerOneArray, 
-          playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick, resetTimer, winner  } = useCompetition()
+          playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick, resetTimer, winner, rows  } = useCompetition()
   
   const [ circlePosition, setCirclePosition ] = useState(null)
   const [ yAxis, setYaxis ] = useState()
@@ -106,18 +106,18 @@ function CircleContainer({index}) {
     setCirclePosition({ x: clickX, y: clickY })
 
     // this will work but I need a to use a row grid, not a column grid...
-    let columnIndex = -1
-        for (const [colName, columnItems] of Object.entries(columns)) {
-          console.log(colName, columnItems)
-          if (columnItems.includes(e.target.id)) {
-              columnIndex = parseInt(colName.slice(3), 10)
-              console.log(columnIndex)
+    let rowIndex = -1
+        for (const [rowName, rowItems] of Object.entries(rows)) {
+          console.log(rowName, rowItems)
+          if (rowItems.includes(e.target.id)) {
+              rowIndex = parseInt(rowName.slice(3), 10)
+              console.log(rowIndex)
               break;
             }
           }
-          console.log(columnIndex)
+          console.log(rowIndex)
 
-          if (columnIndex === 1 ) {
+          if (rowIndex === 1 ) {
             setYaxis(-500)
           }
   }
