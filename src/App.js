@@ -8,6 +8,7 @@ import GameOn from './components/GameOn';
 
 // animation
   // manually adjust every circl as it is now ..
+  // account for different scren size
 
 
 
