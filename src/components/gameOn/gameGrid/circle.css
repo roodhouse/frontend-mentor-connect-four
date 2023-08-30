@@ -1,38 +1,223 @@
-/* column 6 */
+/* column 1 */
 
-#parentCircle-6 {
+#parentCircle-0 {
     position: relative;
-    left: 2px;
+    left: -15px;
     top: -14px;
 }
 
-#parentCircle-40 {
+#parentCircle-7 {
     position: relative;
-    left: 2px;
-    top: 7px;
+    left: -15px;
+    top: -9px;
 }
 
-#parentCircle-34 {
+#parentCircle-14 {
     position: relative;
-    left: 2px;
+    left: -15px;
+    top: -6px;
+}
+
+#parentCircle-21 {
+    position: relative;
+    left: -15px;
+}
+
+#parentCircle-28 {
+    position: relative;
+    left: -15px;
     top: 3px;
 }
 
-#parentCircle-27 {
+#parentCircle-35 {
     position: relative;
-    left: 2px;
+    left: -15px;
+    top: 7px;
 }
 
-#parentCircle-20 {
+/* column 2 */
+
+#parentCircle-1 {
+    position: relative;
+    left: -11px;
+    top: -14px;
+}
+
+#parentCircle-8 {
+    position: relative;
+    left: -11px;
+    top: -9px;
+}
+
+#parentCircle-15 {
+    position: relative;
+    left: -11px;
+    top: -6px;
+}
+
+#parentCircle-22 {
+    position: relative;
+    left: -11px;
+}
+
+#parentCircle-29 {
+    position: relative;
+    left: -11px;
+    top: 3px;
+}
+
+#parentCircle-36 {
+    position: relative;
+    left: -11px;
+    top: 7px;
+}
+
+/* column 3 */
+
+#parentCircle-2 {
+    position: relative;
+    left: -8px;
+    top: -14px;
+}
+
+#parentCircle-9 {
+    position: relative;
+    left: -8px;
+    top: -9px;
+}
+
+#parentCircle-16 {
+    position: relative;
+    left: -8px;
+    top: -6px;
+}
+
+#parentCircle-23 {
+    position: relative;
+    left: -8px;
+}
+
+#parentCircle-30 {
+    position: relative;
+    left: -8px;
+    top: 3px;
+}
+
+#parentCircle-37 {
+    position: relative;
+    left: -8px;
+    top: 7px;
+}
+
+/* column 4 */
+
+#parentCircle-3 {
+    position: relative;
+    left: -5px;
+    top: -14px;
+}
+
+#parentCircle-10 {
+    position: relative;
+    left: -5px;
+    top: -9px;
+}
+
+#parentCircle-17 {
+    position: relative;
+    left: -5px;
+    top: -6px;
+}
+
+#parentCircle-24 {
+    position: relative;
+    left: -5px;
+}
+
+#parentCircle-31 {
+    position: relative;
+    left: -5px;
+    top: 3px;
+}
+
+#parentCircle-38 {
+    position: relative;
+    left: -5px;
+    top: 7px;
+}
+
+/* column 5 */
+
+#parentCircle-4 {
+    position: relative;
+    left: -2px;
+    top: -14px;
+}
+
+#parentCircle-11 {
+    position: relative;
+    left: -2px;
+    top: -9px;
+}
+
+#parentCircle-18 {
+    position: relative;
+    left: -2px;
+    top: -6px;
+}
+
+#parentCircle-25 {
+    position: relative;
+    left: -2px;
+}
+
+#parentCircle-32 {
+    position: relative;
+    left: -2px;
+    top: 3px;
+}
+
+#parentCircle-39 {
+    position: relative;
+    left: -2px;
+    top: 7px;
+}
+
+/* column 6 */
+
+#parentCircle-5 {
     position: relative;
     left: 2px;
-    top: -6px;
+    top: -14px;
 }
 
 #parentCircle-12 {
     position: relative;
     left: 2px;
     top: -9px;
+}
+
+#parentCircle-19 {
+    position: relative;
+    left: 2px;
+    top: -6px;
+}
+
+#parentCircle-26 {
+    position: relative;
+    left: 2px;
+}
+
+#parentCircle-33 {
+    position: relative;
+    left: 2px;
+    top: 3px;
+}
+
+#parentCircle-40 {
+    position: relative;
+    left: 2px;
+    top: 7px;
 }
 
 /* column 7 */
@@ -70,4 +255,273 @@
     position: relative;
     left: 6px;
     top: 7px;
+}
+
+@media (max-width: 768px ) {
+
+    /* column 1 */
+
+    #parentCircle-0 {
+        position: relative;
+        left: -5px;
+        top: -4px;
+    }
+
+    #parentCircle-7 {
+        position: relative;
+        left: -5px;
+        top: -2px;
+    }
+
+    #parentCircle-14 {
+        position: relative;
+        left: -5px;
+        top: 1px;
+    }
+
+    #parentCircle-21 {
+        position: relative;
+        left: -5px;
+        top: 3px;
+    }
+
+    #parentCircle-28 {
+        position: relative;
+        left: -5px;
+        top: 5px;
+    }
+
+    #parentCircle-35 {
+        position: relative;
+        left: -5px;
+        top: 7px;
+    }
+
+    /* column 2 */
+
+    #parentCircle-1 {
+        position: relative;
+        left: -3px;
+        top: -4px;
+    }
+
+    #parentCircle-8 {
+        position: relative;
+        left: -3px;
+        top: -2px;
+    }
+
+    #parentCircle-15 {
+        position: relative;
+        left: -3px;
+        top: 1px;
+    }
+
+    #parentCircle-22 {
+        position: relative;
+        left: -3px;
+        top: 3px;
+    }
+
+    #parentCircle-29 {
+        position: relative;
+        left: -3px;
+        top: 5px;
+    }
+
+    #parentCircle-36 {
+        position: relative;
+        left: -3px;
+        top: 7px;
+    }
+
+    /* column 3 */
+
+    #parentCircle-2 {
+        position: relative;
+        left: -2px;
+        top: -4px;
+    }
+
+    #parentCircle-9 {
+        position: relative;
+        left: -2px;
+        top: -2px;
+    }
+
+    #parentCircle-16 {
+        position: relative;
+        left: -2px;
+        top: 1px;
+    }
+
+    #parentCircle-23 {
+        position: relative;
+        left: -2px;
+        top: 3px;
+    }
+
+    #parentCircle-30 {
+        position: relative;
+        left: -2px;
+        top: 5px;
+    }
+
+    #parentCircle-37 {
+        position: relative;
+        left: -2px;
+        top: 7px;
+    }
+    
+    /* column 4 */
+
+    #parentCircle-3 {
+        position: relative;
+        left: 0px;
+        top: -4px;
+    }
+
+    #parentCircle-10 {
+        position: relative;
+        left: 0px;
+        top: -2px;
+    }
+
+    #parentCircle-17 {
+        position: relative;
+        left: 0px;
+        top: 1px;
+    }
+
+    #parentCircle-24 {
+        position: relative;
+        left: 0px;
+        top: 3px;
+    }
+
+    #parentCircle-31 {
+        position: relative;
+        left: 0px;
+        top: 5px;
+    }
+
+    #parentCircle-38 {
+        position: relative;
+        left: 0px;
+        top: 7px;
+    }
+
+    /* column 5 */
+
+    #parentCircle-4 {
+        position: relative;
+        left: 2px;
+        top: -4px;
+    }
+
+    #parentCircle-11 {
+        position: relative;
+        left: 2px;
+        top: -2px;
+    }
+
+    #parentCircle-18 {
+        position: relative;
+        left: 2px;
+        top: 1px;
+    }
+
+    #parentCircle-25 {
+        position: relative;
+        left: 2px;
+        top: 3px;
+    }
+
+    #parentCircle-32 {
+        position: relative;
+        left: 2px;
+        top: 5px;
+    }
+
+    #parentCircle-39 {
+        position: relative;
+        left: 2px;
+        top: 7px;
+    }
+
+    /* column 6 */
+
+    #parentCircle-5 {
+        position: relative;
+        left: 3px;
+        top: -4px;
+    }
+
+    #parentCircle-12 {
+        position: relative;
+        left: 3px;
+        top: -2px;
+    }
+
+    #parentCircle-19 {
+        position: relative;
+        left: 3px;
+        top: 1px;
+    }
+
+    #parentCircle-26 {
+        position: relative;
+        left: 3px;
+        top: 3px;
+    }
+
+    #parentCircle-33 {
+        position: relative;
+        left: 3px;
+        top: 5px;
+    }
+
+    #parentCircle-40 {
+        position: relative;
+        left: 3px;
+        top: 7px;
+    }
+
+    /* column 7 */
+
+    #parentCircle-6 {
+        position: relative;
+        left: 5px;
+        top: -4px;
+    }
+
+    #parentCircle-13 {
+        position: relative;
+        left: 5px;
+        top: -2px;
+    }
+
+    #parentCircle-20 {
+        position: relative;
+        left: 5px;
+        top: 1px;
+    }
+
+    #parentCircle-27 {
+        position: relative;
+        top: 3px;
+        left: 5px;
+    }
+
+    #parentCircle-34 {
+        position: relative;
+        left: 5px;
+        top: 5px;
+    }
+
+    #parentCircle-41 {
+        position: relative;
+        left: 5px;
+        top: 7px;
+    }
 }
