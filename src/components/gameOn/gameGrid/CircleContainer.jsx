@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useCompetition } from '../../../context/Competition'
 import Circle from './circle/Circle'
+import './circle.css'
+
+// integrate the old code with new code so far
 
 function CircleContainer({index}) {
 
@@ -88,9 +91,23 @@ function CircleContainer({index}) {
    circleLayerWrapper.classList.replace('z-[100]', 'z-[15]')
     const clickX = e.clientX
     const clickY = e.clientY
-
-    setCirclePosition({ x: clickX, y: clickY })
     
+    setCirclePosition({ x: clickX, y: clickY })
+
+    setTimeout(() => {
+      circleLayerWrapper.classList.replace('z-[15]', 'z-[100]')
+      // find the all black circles and if they have a piece then change their box shadow to 0 
+      console.log(e.target)
+      let blackTarget = e.target.id.split('-')
+      blackTarget = blackTarget[1]
+      console.log(blackTarget)
+      blackTarget = 'blackCircle-' + blackTarget
+      console.log(blackTarget)
+      blackTarget = document.getElementById(blackTarget)
+      console.log(blackTarget)
+      blackTarget.style.boxShadow = '0px 0px 0px 0px'
+
+    }, 2200)
 
   }
 
