@@ -7,9 +7,8 @@ import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
 // animation
-  // manually adjust every circl as it is now ..
-  // account for different scren size
-  // box shadow off of black grid, need to adjust bottom card to appear under game grid.
+  // adjust where the pice originates from as it begins to come down
+    // need to create row grid to measure distance from top to the row
 
 
 

@@ -12,6 +12,9 @@ function CircleContainer({index}) {
           playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick, resetTimer, winner  } = useCompetition()
   
   const [ circlePosition, setCirclePosition ] = useState(null)
+  const [ yAxis, setYaxis ] = useState()
+
+
 
   // const handleClick = (e) => {
 
@@ -86,13 +89,37 @@ function CircleContainer({index}) {
   //   }
   // }
 
+  // document.addEventListener("mousemove", (e) => {
+  //   let mousex = e.clientX; // Gets Mouse X
+  //   let mousey = e.clientY; // Gets Mouse Y
+  //   console.log([mousex, mousey]); // Prints data
+  // });
+
   const handleClick = (e) => {
-   let circleLayerWrapper = e.target.parentElement
+    console.log(e.target.id)
+    // console.log(columns)
+   let circleLayerWrapper = e.target
     const clickX = e.clientX
     const clickY = e.clientY
+    // console.log(clickY)
     
     setCirclePosition({ x: clickX, y: clickY })
 
+    // this will work but I need a to use a row grid, not a column grid...
+    let columnIndex = -1
+        for (const [colName, columnItems] of Object.entries(columns)) {
+          console.log(colName, columnItems)
+          if (columnItems.includes(e.target.id)) {
+              columnIndex = parseInt(colName.slice(3), 10)
+              console.log(columnIndex)
+              break;
+            }
+          }
+          console.log(columnIndex)
+
+          if (columnIndex === 1 ) {
+            setYaxis(-500)
+          }
   }
 
   return (
@@ -106,6 +133,7 @@ function CircleContainer({index}) {
                 left: circlePosition.x + 'px',
                 top: circlePosition.y + 'px',
               }}
+              yAxis={yAxis}
               />
           )}
 
