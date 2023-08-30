@@ -88,15 +88,19 @@ function CircleContainer({index}) {
 
   const handleClick = (e) => {
    let circleLayerWrapper = e.target.parentElement
-   circleLayerWrapper.classList.replace('z-[100]', 'z-[15]')
+  //  circleLayerWrapper.classList.replace('z-[100]', 'z-[15]')
     const clickX = e.clientX
     const clickY = e.clientY
     
     setCirclePosition({ x: clickX, y: clickY })
 
     setTimeout(() => {
-      circleLayerWrapper.classList.replace('z-[15]', 'z-[100]')
+      // circleLayerWrapper.classList.replace('z-[15]', 'z-[100]')
       // find the all black circles and if they have a piece then change their box shadow to 0 
+
+      // error here 
+
+      
       console.log(e.target)
       let blackTarget = e.target.id.split('-')
       blackTarget = blackTarget[1]
