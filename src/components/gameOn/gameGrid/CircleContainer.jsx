@@ -20,7 +20,6 @@ function CircleContainer({index}) {
 
   
   useEffect(() => {
-    console.log(`from circleContainer new game: ${newGame}`)
     setPieceBackground('')
     setCirclePosition(null)
     setNewGame(false)

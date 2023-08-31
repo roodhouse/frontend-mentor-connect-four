@@ -230,23 +230,7 @@ const CompetitionProvider = ({ children }) => {
         }
       }, [timer]);
 
-      // clear piece background
-      function clearNonEmptyBackgrounds() {
-        // for (const columnKey in columns) {
-        //     const column = columns[columnKey]
-        //     for (let i = 0; i < column.length; i++) {
-        //         const item = document.getElementById(column[i])
-        //         if (item.firstChild) {
-        //             console.log(item)
-        //             let firstChild = item.firstChild
-        //             item.removeChild(firstChild)
-        //         } else {
-        //             console.log('nada')
-        //         }
-        //     }
-        // }
-      }
-
+      // clear win background
       function clearWinningCircles() {
         const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
             winnerCircleWrapper.classList.replace('z-[100]', 'z-[1]')
@@ -269,7 +253,6 @@ const CompetitionProvider = ({ children }) => {
         // reset timer
         resetTimer()
         // reset board to all blanks
-        clearNonEmptyBackgrounds()
         clearWinningCircles()
         // reset marker
         setMarker('marker5')
@@ -278,6 +261,7 @@ const CompetitionProvider = ({ children }) => {
 
       // play again click
       const playAgain = () => {
+
         const playerBottomCardWrapper = document.getElementById('playerBottomCardWrapper');
         const winCardWrapper = document.getElementById('winCardWrapper');
         // remove the win screen and display the turn and counter screen
@@ -300,12 +284,11 @@ const CompetitionProvider = ({ children }) => {
         // reset timer
         resetTimer()
         // reset board to all blanks
-        clearNonEmptyBackgrounds()
         clearWinningCircles()
         // reset marker
         setMarker('marker5')
         startTimer()
-
+        
       }
 
       // win logic
@@ -415,6 +398,11 @@ const CompetitionProvider = ({ children }) => {
                     whiteCircle.classList.add('border-white')
                 })
             }, winDelay*1000)
+
+            setTimeout(() => {
+                let playButton = document.getElementById('playAgainContainer')
+                playButton.classList.remove('pointer-events-none', 'opacity-50', 'cursor-not-allowed')
+            },winDelay*2000)
         }
 
         // Player two or cpu win
