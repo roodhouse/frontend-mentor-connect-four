@@ -257,6 +257,237 @@
     top: 7px;
 }
 
+/* winning circle */
+.winningCircle {
+    position: relative;
+}
+
+/* column 1 */
+
+#winnerCircle-0 {
+    left: 15px;
+    top: 20px;
+}
+
+#winnerCircle-7 {
+    left: 15px;
+    top: 23px;
+}
+
+#winnerCircle-14 {
+    left: 15px;
+    top: 27px;
+}
+
+#winnerCircle-21 {
+    left: 15px;
+    top: 29px;
+}
+
+#winnerCircle-28 {
+    left: 15px;
+    top: 32px;
+}
+
+#winnerCircle-35 {
+    left: 15px;
+    top: 36px;
+}
+
+/* column 2 */
+
+#winnerCircle-1 {
+    left: 19px;
+    top: 20px;
+}
+
+#winnerCircle-8 {
+    left: 19px;
+    top: 23px;
+}
+
+#winnerCircle-15 {
+    left: 19px;
+    top: 27px;
+}
+
+#winnerCircle-22 {
+    left: 19px;
+    top: 29px;
+}
+
+#winnerCircle-29 {
+    left: 19px;
+    top: 32px;
+}
+
+#winnerCircle-36 { 
+    left: 19px;
+    top: 36px;
+}
+
+/* column 3 */
+
+#winnerCircle-2 {
+    left: 22px;
+    top: 20px;
+}
+
+#winnerCircle-9 {
+    left: 22px;
+    top: 23px;
+}
+
+#winnerCircle-16 {
+    left: 22px;
+    top: 27px;
+}
+
+#winnerCircle-23 {
+    left: 22px;
+    top: 29px;
+}
+
+#winnerCircle-30 {
+    left: 22px;
+    top: 32px;
+}
+
+#winnerCircle-37 { 
+    left: 22px;
+    top: 36px;
+}
+
+/* column 4 */
+
+#winnerCircle-3 {
+    left: 25px;
+    top: 20px;
+}
+
+#winnerCircle-10 {
+    left: 25px;
+    top: 23px;
+}
+
+#winnerCircle-17 {
+    left: 25px;
+    top: 27px;
+}
+
+#winnerCircle-24 {
+    left: 25px;
+    top: 29px;
+}
+
+#winnerCircle-31 {
+    left: 25px;
+    top: 32px;
+}
+
+#winnerCircle-38 {
+    left: 25px;
+    top: 36px;
+}
+
+/* column 5 */
+
+#winnerCircle-4 {
+    left: 28px;
+    top: 20px;
+}
+
+#winnerCircle-11 {
+    left: 28px;
+    top: 23px;
+}
+
+#winnerCircle-18 {
+    left: 28px;
+    top: 27px;
+}
+
+#winnerCircle-25 {
+    left: 28px;
+    top: 29px;
+}
+
+#winnerCircle-32 {
+    left: 28px;
+    top: 32px;
+}
+
+#winnerCircle-39 {
+    left: 28px;
+    top: 36px;
+}
+
+/* column 6 */
+
+#winnerCircle-5 {
+    left: 32px;
+    top: 20px;
+}
+
+#winnerCircle-12 {
+    left: 32px;
+    top: 23px;
+}
+
+#winnerCircle-19 {
+    left: 32px;
+    top: 27px;
+}
+
+#winnerCircle-26 {
+    left: 32px;
+    top:29px
+}
+
+#winnerCircle-33 {
+    left: 32px;
+    top: 32px;
+}
+
+#winnerCircle-40 {
+    left: 32px;
+    top: 36px;
+}
+
+/* column 7 */
+
+#winnerCircle-6 {
+    left: 36px;
+    top: 20px;
+}
+
+#winnerCircle-13 {
+    left: 36px;
+    top: 23px;
+}
+
+#winnerCircle-20 {
+    left: 36px;
+    top: 27px;
+}
+
+#winnerCircle-27 { 
+    left: 36px;
+    top: 29px;
+}
+
+#winnerCircle-34 {
+    left: 36px;
+    top: 32px;
+}
+
+#winnerCircle-41 {
+    left: 36px;
+    top: 36px;
+}
+
+
+
 @media (max-width: 768px ) {
 
     /* column 1 */
@@ -523,5 +754,229 @@
         position: relative;
         left: 5px;
         top: 7px;
+    }
+
+    /* column 1 */
+
+    #winnerCircle-0 {
+        left: 8px;
+        top: 10px;
+    }
+
+    #winnerCircle-7 {
+        left: 8px;
+        top: 13px;
+    }
+
+    #winnerCircle-14 {
+        left: 8px;
+        top: 14px;
+    }
+
+    #winnerCircle-21 {
+        left: 8px;
+        top: 15px;
+    }
+
+    #winnerCircle-28 {
+        left: 8px;
+        top: 17px;
+    }
+
+    #winnerCircle-35 {
+        left: 8px;
+        top: 18px;
+    }
+
+    /* column 2 */
+
+    #winnerCircle-1 {
+        left: 9.5px;
+        top: 10px;
+    }
+
+    #winnerCircle-8 {
+        left: 9.5px;
+        top: 13px;
+    }
+
+    #winnerCircle-15 {
+        left: 9.5px;
+        top: 14px;
+    }
+
+    #winnerCircle-22 {
+        left: 9.5px;
+        top: 15px;
+    }
+
+    #winnerCircle-29 {
+        left: 9.5px;
+        top: 17px;
+    }
+
+    #winnerCircle-36 { 
+        left: 9.5px;
+        top: 18px;
+    }
+
+    /* column 3 */
+
+    #winnerCircle-2 {
+        left: 10.5px;
+        top: 10px;
+    }
+
+    #winnerCircle-9 {
+        left: 10.5px;
+        top: 13px;
+    }
+
+    #winnerCircle-16 {
+        left: 10.5px;
+        top: 14px;
+    }
+
+    #winnerCircle-23 {
+        left: 10.5px;
+        top: 15px;
+    }
+
+    #winnerCircle-30 {
+        left: 10.5px;
+        top: 17px;
+    }
+
+    #winnerCircle-37 { 
+        left: 10.5px;
+        top: 18px;
+    }
+
+    /* column 4 */
+
+    #winnerCircle-3 {
+        left: 12.5px;
+        top: 10px;
+    }
+
+    #winnerCircle-10 {
+        left: 12.5px;
+        top: 13px;
+    }
+
+    #winnerCircle-17 {
+        left: 12.5px;
+        top: 14px;
+    }
+
+    #winnerCircle-24 {
+        left: 12.5px;
+        top: 15px;
+    }
+
+    #winnerCircle-31 {
+        left: 12.5px;
+        top: 17px;
+    }
+
+    #winnerCircle-38 {
+        left: 12.5px;
+        top: 18px;
+    }
+
+    /* column 5 */
+
+    #winnerCircle-4 {
+        left: 14.5px;
+        top: 10px;
+    }
+
+    #winnerCircle-11 {
+        left: 14.5px;
+        top: 13px;
+    }
+
+    #winnerCircle-18 {
+        left: 14.5px;
+        top: 14px;
+    }
+
+    #winnerCircle-25 {
+        left: 14.5px;
+        top: 15px;
+    }
+
+    #winnerCircle-32 {
+        left: 14.5px;
+        top: 17px;
+    }
+
+    #winnerCircle-39 {
+        left: 14.5px;
+        top: 18px;
+    }
+
+    /* column 6 */
+
+    #winnerCircle-5 {
+        left: 16px;
+        top: 10px;
+    }
+
+    #winnerCircle-12 {
+        left: 16px;
+        top: 13px;
+    }
+
+    #winnerCircle-19 {
+        left: 16px;
+        top: 14px;
+    }
+
+    #winnerCircle-26 {
+        left: 16px;
+        top: 15px
+    }
+
+    #winnerCircle-33 {
+        left: 16px;
+        top: 17px;
+    }
+
+    #winnerCircle-40 {
+        left: 16px;
+        top: 18px;
+    }
+
+    /* column 7 */
+
+    #winnerCircle-6 {
+        left: 17.5px;
+        top: 10px;
+    }
+
+    #winnerCircle-13 {
+        left: 17.5px;
+        top: 13px;
+    }
+
+    #winnerCircle-20 {
+        left: 17.5px;
+        top: 14px;
+    }
+
+    #winnerCircle-27 { 
+        left: 17.5px;
+        top: 15px;
+    }
+
+    #winnerCircle-34 {
+        left: 17.5px;
+        top: 17px;
+    }
+
+    #winnerCircle-41 {
+        left: 17.5px;
+        top: 18px;
     }
 }

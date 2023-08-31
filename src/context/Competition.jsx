@@ -21,6 +21,7 @@ const CompetitionProvider = ({ children }) => {
     const [ newGame, setNewGame ] = useState(false)
     const [ paused, setPaused ] = useState(false)
     const [ gameOn, setGameOn ] = useState(false)
+    const [ winDelay, setWinDelay ] = useState(4)
 
     const cardStyle = () => {
         if ( turn === 'Player1') {
@@ -407,26 +408,24 @@ const CompetitionProvider = ({ children }) => {
         if (playerOneWin) {
             console.log('player one wins')
             console.log(playerOneWinningPieces)
-            setWinner('Player1')
-            setPlayerOneArray([])
-            setPlayerTwoArray([])
-            stopTimer()
-            console.log('stopped')
-            let score = playerOneScore + 1
-            setPlayerOneScore(score)
-            // playerOneWinningPieces.forEach((piece) => {
-            //     // exchange parentCircle for winnerCircle
-            //     console.log(document.getElementById(piece))
-            // })
-            const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
-            winnerCircleWrapper.classList.replace('z-30', 'z-[100]')
-            const winningCircles = playerOneWinningPieces.map(piece => piece.replace('parent', 'winner'))
-
-            winningCircles.forEach((piece) => {
-                let whiteCircle = document.getElementById(piece)
-                whiteCircle.classList.remove('border-transparent')
-                whiteCircle.classList.add('border-white')
-            })
+            setTimeout(() => {
+                setWinner('Player1')
+                setPlayerOneArray([])
+                setPlayerTwoArray([])
+                stopTimer()
+                let score = playerOneScore + 1
+                setPlayerOneScore(score)
+                
+                const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
+                winnerCircleWrapper.classList.replace('z-[1]', 'z-[100]')
+                const winningCircles = playerOneWinningPieces.map(piece => piece.replace('parent', 'winner'))
+    
+                winningCircles.forEach((piece) => {
+                    let whiteCircle = document.getElementById(piece)
+                    whiteCircle.classList.remove('border-transparent')
+                    whiteCircle.classList.add('border-white')
+                })
+            }, winDelay*1000)
         }
 
         // Player two or cpu win
@@ -466,6 +465,11 @@ const CompetitionProvider = ({ children }) => {
             })
         }
 
+        // win annoucement delay
+        const winAnnouncement = (e) => {
+            setWinDelay(e)
+        }
+
 
     return (
         <CompetitionContext.Provider value={{ competition, setCompetition, turn, setTurn, playerOneScore, 
@@ -473,7 +477,7 @@ const CompetitionProvider = ({ children }) => {
         cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
         marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, 
         setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, 
-        resetTimer, pauseTimer, winner, setWinner, restart, playAgain, setPaused, gameOn, setGameOn, rows }}>
+        resetTimer, pauseTimer, winner, setWinner, restart, playAgain, setPaused, gameOn, setGameOn, rows, winAnnouncement }}>
             {children}
         </CompetitionContext.Provider>
     )

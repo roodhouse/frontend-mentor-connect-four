@@ -1,4 +1,5 @@
 import React from 'react'
+import './circle.css'
 
 function WinnerCircle({index}) {
   return (

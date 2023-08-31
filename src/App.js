@@ -6,9 +6,12 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// animation
-  // adjust where the pice originates from as it begins to come down
-    // need to create row grid to measure distance from top to the row
+// bug 1: win circles need to be readjusted 
+  // player2 win needs to be adjusted , win circles do not appear
+// bug 2: play again no longer works
+// bug 3: restart probably does not work either
+// bug 4: quit might not work
+// bug 5: dbl check height
 
 
 
