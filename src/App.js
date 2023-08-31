@@ -6,8 +6,7 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// bug 1: win circles need to be readjusted 
-  // player2 win needs to be adjusted , win circles do not appear
+
 // bug 2: play again no longer works
 // bug 3: restart probably does not work either
 // bug 4: quit might not work

@@ -446,23 +446,24 @@ const CompetitionProvider = ({ children }) => {
         if (playerTwoWin) {
             console.log('player two wins')
             console.log(playerTwoWinningPieces)
-            setWinner('Player2')
-            setPlayerTwoArray([])
-            setPlayerOneArray([])
-            stopTimer()
-            console.log('stopped')
-            let score = playerTwoCpuScore + 1
-            setPlayerTwoCpuScore(score)
-
-            const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
-            winnerCircleWrapper.classList.replace('z-30', 'z-[100]')
-            const winningCircles = playerTwoWinningPieces.map(piece => piece.replace('parent', 'winner'))
-
-            winningCircles.forEach((piece) => {
-                let whiteCircle = document.getElementById(piece)
-                whiteCircle.classList.remove('border-transparent')
-                whiteCircle.classList.add('border-white')
-            })
+            setTimeout(() => {
+                setWinner('Player2')
+                setPlayerOneArray([])
+                setPlayerTwoArray([])
+                stopTimer()
+                let score = playerTwoCpuScore + 1
+                setPlayerTwoCpuScore(score)
+                
+                const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
+                winnerCircleWrapper.classList.replace('z-[1]', 'z-[100]')
+                const winningCircles = playerTwoWinningPieces.map(piece => piece.replace('parent', 'winner'))
+    
+                winningCircles.forEach((piece) => {
+                    let whiteCircle = document.getElementById(piece)
+                    whiteCircle.classList.remove('border-transparent')
+                    whiteCircle.classList.add('border-white')
+                })
+            }, winDelay*1000)
         }
 
         // win annoucement delay
