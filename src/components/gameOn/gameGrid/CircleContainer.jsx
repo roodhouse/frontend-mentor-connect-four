@@ -22,18 +22,16 @@ function CircleContainer({index}) {
   useEffect(() => {
     console.log(`from circleContainer new game: ${newGame}`)
     setPieceBackground('')
+    setCirclePosition(null)
     setNewGame(false)
   },[newGame])
 
   const handleClick = (e) => {
 
     const tile = e.target
-    console.log(tile)
     let pieceId = tile.id
+    
     if ( winner === null ) {
-      console.log(tile)
-      // if tile does not have child then this the first time it has been clicked during this game, 
-      // if it does have a child do something different with it to change the child background...
       if ( allowedToClick.includes(pieceId)) {
         let pieceArray = (pieceId.split('-'))
           if (pieceArray[1] > 6) {

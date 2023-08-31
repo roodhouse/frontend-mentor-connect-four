@@ -8,8 +8,8 @@ import GameOn from './components/GameOn';
 
 
 // bug 2: play again no longer works
-    // in circle container, when newGame is true change the background of any child of a column item that is present
-    // what happens to that item on click in the 2nd game?
+    // clicking play again to fast after game ends causes the winner to be redeclared and the win circles to appear again
+    //
 // bug 3: restart probably does not work either
 // bug 4: quit might not work
 // bug 5: dbl check height
