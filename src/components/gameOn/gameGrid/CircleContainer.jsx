@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useCompetition } from '../../../context/Competition'
+import Circle from './circle/Circle'
+import './circle.css'
 
 function CircleContainer({index}) {
 
   const { turn, setTurn, columns, setMarker, playerOneArray, setPlayerOneArray, 
-          playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick, resetTimer, winner  } = useCompetition()
+          playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick, 
+          resetTimer, winner, rows, winAnnouncement } = useCompetition()
+  
+  const [ circlePosition, setCirclePosition ] = useState(null)
+  const [ yAxis, setYaxis ] = useState()
+  const [ duration, setDuration ] = useState(4)
+  const [ pieceBackground, setPieceBackground ] = useState()
+
+  useEffect(() => {
+    winAnnouncement(duration)
+  },[duration])
 
   const handleClick = (e) => {
+
     const tile = e.target
+    console.log(tile)
     let pieceId = tile.id
     if ( winner === null ) {
       if ( allowedToClick.includes(pieceId)) {
@@ -20,15 +34,50 @@ function CircleContainer({index}) {
             newArray.push(newClickable)
             setAllowedToClick(newArray)
           }
+
+          // animation handling
+          const clickX = e.clientX
+          const clickY = e.clientY
+          
+          setCirclePosition({ x: clickX, y: clickY })
+
+          let rowIndex = -1
+              for (const [rowName, rowItems] of Object.entries(rows)) {
+                if (rowItems.includes(pieceId)) {
+                    rowIndex = parseInt(rowName.slice(3), 10)
+                    break;
+                  }
+                }
+
+                if (rowIndex === 1 ) {
+                  setYaxis(-500)
+                  setDuration(4)
+                } else if ( rowIndex === 2 ) {
+                  setYaxis(-416)
+                  setDuration(4)
+                }
+                else if ( rowIndex === 3 ) {
+                  setYaxis(-332)
+                  setDuration(4)
+                } else if ( rowIndex === 4 ) {
+                  setYaxis(-248)
+                  setDuration(3)
+                } else if ( rowIndex === 5 ) {
+                  setYaxis(-164)
+                  setDuration(2)
+                } else if ( rowIndex === 6 ) {
+                  setYaxis(-80)
+                  setDuration(2)
+                }
     
         if ( tile.style.background === '') {
           if ( turn === 'Player1' ) {
             if ( window.innerWidth < 768 ) {
-              tile.style.background = 'url("./assets/images/counter-red-small.svg")'
+              setPieceBackground('url("./assets/images/counter-red-small.svg")')
               tile.style.backgroundSize = 'contain'
               tile.style.backgroundRepeat = 'no-repeat'
             } else if ( window.innerWidth >= 768 ) {
-              tile.style.background = 'url("./assets/images/counter-red-large.svg")'
+              setPieceBackground('url("./assets/images/counter-red-large.svg")')
               tile.style.backgroundSize = 'contain'
               tile.style.backgroundRepeat = 'no-repeat'
             }
@@ -36,11 +85,11 @@ function CircleContainer({index}) {
             setTurn('Player2')
           } else if ( turn === 'Player2') {
             if ( window.innerWidth < 768 ) {
-              tile.style.background = 'url("./assets/images/counter-yellow-small.svg")'
+              setPieceBackground('url("./assets/images/counter-yellow-small.svg")')
               tile.style.backgroundSize = 'contain'
               tile.style.backgroundRepeat = 'no-repeat'
             } else if ( window.innerWidth >= 768 ) {
-              tile.style.background = 'url("./assets/images/counter-yellow-large.svg")'
+              setPieceBackground('url("./assets/images/counter-yellow-large.svg")')
               tile.style.backgroundSize = 'contain'
               tile.style.backgroundRepeat = 'no-repeat'
             }
@@ -54,6 +103,7 @@ function CircleContainer({index}) {
         console.log('nay')
         return
       }
+
       // find the correct column and place the marker
       const clickedCircle = e.target.id
       let columnIndex = -1
@@ -80,7 +130,24 @@ function CircleContainer({index}) {
 
   return (
     <>
-        <div id={'parentCircle-'+index} onClick={handleClick} className='w-[35px] h-[38px] rounded-[50%] md:w-16 md:h-16 md:ml-1 cursor-pointer' />
+        <div id={'parentCircle-'+index} onClick={handleClick} className='w-[35px] h-[38px] rounded-[50%] md:w-16 md:h-16 md:ml-1 cursor-pointer'>
+
+          { circlePosition && (
+            <Circle
+              style={{
+                position: 'absolute',
+                left: circlePosition.x + 'px',
+                top: circlePosition.y + 'px',
+              }}
+              yAxis={yAxis}
+              duration={duration}
+              pieceBackground={pieceBackground}
+              />
+          )}
+
+
+        </div>
+        
     </>
   )
 }
