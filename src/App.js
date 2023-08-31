@@ -8,6 +8,8 @@ import GameOn from './components/GameOn';
 
 
 // bug 2: play again no longer works
+    // fixed clearing of board after play again
+    // now the board is not able to be clicked again during new game...
 // bug 3: restart probably does not work either
 // bug 4: quit might not work
 // bug 5: dbl check height
