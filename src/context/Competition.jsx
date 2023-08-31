@@ -242,14 +242,13 @@ const CompetitionProvider = ({ children }) => {
 
       // clear piece background
       function clearNonEmptyBackgrounds() {
+        console.log(playerOneArray)
         for (const columnKey in columns) {
             const column = columns[columnKey]
             for (let i = 0; i < column.length; i++) {
-                const item = document.getElementById(column[i]).firstChild
-                console.log(item)
-                if (item && item.style.backgroundImage !== '') {
-                    console.log(item)
-                    item.style.backgroundImage = ''
+                const item = document.getElementById(column[i])
+                if (item && item.style.background !== '') {
+                    item.style.background = ''
                 }
             }
         }
@@ -262,7 +261,6 @@ const CompetitionProvider = ({ children }) => {
         
         allCircles.forEach((circle) => {
             if ( circle.classList.contains('border-white')) {
-                console.log(circle)
                 circle.classList.replace('border-white', 'border-transparent')
             }
         })

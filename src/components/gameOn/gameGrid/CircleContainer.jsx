@@ -6,7 +6,8 @@ import './circle.css'
 function CircleContainer({index}) {
 
   const { turn, setTurn, columns, setMarker, playerOneArray, setPlayerOneArray, 
-          playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick, resetTimer, winner, rows, winAnnouncement } = useCompetition()
+          playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick, 
+          resetTimer, winner, rows, winAnnouncement } = useCompetition()
   
   const [ circlePosition, setCirclePosition ] = useState(null)
   const [ yAxis, setYaxis ] = useState()
