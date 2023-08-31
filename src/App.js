@@ -8,7 +8,7 @@ import GameOn from './components/GameOn';
 
 
 // bug 2: play again no longer works
-    // clicking play again to fast after game ends causes the winner to be redeclared and the win circles to appear again
+    // game 3 contains same bug as game 2 previously had..
     //
 // bug 3: restart probably does not work either
 // bug 4: quit might not work
