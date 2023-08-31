@@ -465,7 +465,8 @@ const CompetitionProvider = ({ children }) => {
         cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
         marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, 
         setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, 
-        resetTimer, pauseTimer, winner, setWinner, restart, playAgain, setPaused, gameOn, setGameOn, rows, winAnnouncement }}>
+        resetTimer, pauseTimer, winner, setWinner, restart, playAgain, setPaused, gameOn, setGameOn, rows, winAnnouncement,
+        newGame, setNewGame }}>
             {children}
         </CompetitionContext.Provider>
     )
