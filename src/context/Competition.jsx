@@ -258,6 +258,9 @@ const CompetitionProvider = ({ children }) => {
         resetTimer()
         // reset board to all blanks
         clearWinningCircles()
+        // set new game
+        setNewGame(true)
+        setTurn(firstTurn)
         // reset marker
         setMarker('marker5')
         startTimer()
