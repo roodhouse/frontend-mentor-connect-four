@@ -227,6 +227,10 @@ const CompetitionProvider = ({ children }) => {
             // set Winner
             setWinner('Player1')
           }
+          setTimeout(() => {
+            let playButton = document.getElementById('playAgainContainer')
+            playButton.classList.remove('pointer-events-none', 'opacity-50', 'cursor-not-allowed')
+            },2000)
         }
       }, [timer]);
 
