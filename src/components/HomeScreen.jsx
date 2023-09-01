@@ -24,6 +24,7 @@ function HomeScreen() {
         document.getElementById('gameOnWrapper').classList.add('xl:flex', 'xl:flex-col', 'xl:justify-end')
         document.getElementById('mainContainer').classList.add('md:h-full', 'xl:h-screen')
         setCompetition('CPU')
+        setTimer(30)
         startTimer()
         setGameOn(true)
     }
@@ -34,6 +35,7 @@ function HomeScreen() {
         document.getElementById('gameOnWrapper').classList.add('xl:flex', 'xl:flex-col', 'xl:justify-end')
         document.getElementById('mainContainer').classList.add('md:h-full', 'xl:h-screen')
         setCompetition('Human')
+        setTimer(30)
         startTimer()
         setGameOn(true)
     }
