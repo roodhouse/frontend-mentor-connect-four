@@ -6,10 +6,6 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-
-// bug 2: play again no longer works
-    // game 3 contains same bug as game 2 previously had..
-    //
 // bug 3: restart probably does not work either
 // bug 4: quit might not work
 // bug 5: dbl check height

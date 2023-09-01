@@ -267,6 +267,7 @@ const CompetitionProvider = ({ children }) => {
         // remove the win screen and display the turn and counter screen
         playerBottomCardWrapper.classList.remove('hidden')
         winCardWrapper.classList.add('hidden')
+    
         // determin whos turn it is based on who went first last time
         if (firstTurn === 'Player1') {
             setTurn('Player2')
@@ -288,8 +289,16 @@ const CompetitionProvider = ({ children }) => {
         // reset marker
         setMarker('marker5')
         startTimer()
-        
+
       }
+
+      useEffect(() => {
+        if (newGame === true) {
+            let playButton = document.getElementById('playAgainContainer')
+            playButton.classList.add('pointer-events-none', 'opacity-50', 'cursor-not-allowed')
+
+        }
+      },[newGame])
 
       // win logic
       let ways2win = 
@@ -439,6 +448,11 @@ const CompetitionProvider = ({ children }) => {
                     whiteCircle.classList.add('border-white')
                 })
             }, winDelay*1000)
+
+            setTimeout(() => {
+                let playButton = document.getElementById('playAgainContainer')
+                playButton.classList.remove('pointer-events-none', 'opacity-50', 'cursor-not-allowed')
+            },winDelay*2000)
         }
 
         // win annoucement delay
