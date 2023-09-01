@@ -7,8 +7,8 @@ import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
 // vs cpu animations...
-// bug 4: quit might not work
 // bug 5: dbl check height
+    // when quitting the main menu height is off
 
 
 
