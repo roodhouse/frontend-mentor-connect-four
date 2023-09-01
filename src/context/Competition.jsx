@@ -227,6 +227,10 @@ const CompetitionProvider = ({ children }) => {
             // set Winner
             setWinner('Player1')
           }
+          setTimeout(() => {
+            let playButton = document.getElementById('playAgainContainer')
+            playButton.classList.remove('pointer-events-none', 'opacity-50', 'cursor-not-allowed')
+            },2000)
         }
       }, [timer]);
 
@@ -254,6 +258,9 @@ const CompetitionProvider = ({ children }) => {
         resetTimer()
         // reset board to all blanks
         clearWinningCircles()
+        // set new game
+        setNewGame(true)
+        setTurn(firstTurn)
         // reset marker
         setMarker('marker5')
         startTimer()
