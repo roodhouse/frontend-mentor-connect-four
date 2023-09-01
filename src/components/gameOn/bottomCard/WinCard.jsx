@@ -28,7 +28,7 @@ function WinCard() {
             <div id="theWinContainer" className='text-center text-[56px] leading-[1.2] font-bold text-black'>
                 <p>{ competition === 'Human' ? 'WINS' : 'WON' }</p>
             </div>
-            <div id="playAgainContainer" onClick={playAgain} className='w-[130px] flex justify-center bg-darkPurple rounded-[20px] py-[9px] text-white text-base font-bold leading-normal cursor-pointer'>
+            <div id="playAgainContainer" onClick={playAgain} className='w-[130px] flex justify-center bg-darkPurple rounded-[20px] py-[9px] text-white text-base font-bold leading-normal pointer-events-none opacity-50 cursor-not-allowed'>
               <p>PLAY AGAIN</p>
             </div>
         </div>

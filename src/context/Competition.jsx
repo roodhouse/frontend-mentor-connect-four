@@ -113,16 +113,13 @@ const CompetitionProvider = ({ children }) => {
     // vs cpu logic
     useEffect(() => {
         if ( competition === 'CPU') {
-            console.log('at top of useEffect')
             if (newGame) {
                 setNewGame(false)
             }
             if ( turn === 'Player2') {
                 if ( winner === null ) {
-                    console.log(`winner is ${winner}`)
                     // select a random piece from the allowedToClick array
                     if ( allowedToClick.length === 7 ) {
-                        console.log('here')
                         const randomIndex = Math.floor(Math.random() * allowedToClick.length);
                         const randomSelection = allowedToClick[randomIndex];
                         // remove item from allowedToClick
@@ -130,7 +127,6 @@ const CompetitionProvider = ({ children }) => {
         
                         let timeout = [1000,2000,3000,4000]
                         let timeoutIndex = Math.floor(Math.random() * timeout.length)
-                        console.log(timeout[timeoutIndex])
                         setTimeout(() => {
                             // change background
                             let randomSelectionDiv = document.getElementById(randomSelection)
@@ -155,20 +151,14 @@ const CompetitionProvider = ({ children }) => {
                               })
                               // set marker
                               let columnIndex = -1
-                              console.log(randomSelection)
                               for (const [colName, columnItems] of Object.entries(columns)) {
-                                console.log(colName, columnItems)
                                 if (columnItems.includes(randomSelection)) {
                                     columnIndex = parseInt(colName.slice(3), 10)
-                                    console.log(columnIndex)
                                     break;
-                                }
-                                    console.log(columnIndex)
+                                    }
                                 }
                                 if (columnIndex !== -1) {
-                                    console.log('iam')
                                     let markerCol = `col${columnIndex}`
-                                    console.log(`marker col: ${markerCol}`)
                                     setMarker(columns[markerCol][0])
                                 } else {
                                     console.log('not found')
@@ -240,20 +230,7 @@ const CompetitionProvider = ({ children }) => {
         }
       }, [timer]);
 
-      // clear piece background
-      function clearNonEmptyBackgrounds() {
-        console.log(playerOneArray)
-        for (const columnKey in columns) {
-            const column = columns[columnKey]
-            for (let i = 0; i < column.length; i++) {
-                const item = document.getElementById(column[i])
-                if (item && item.style.background !== '') {
-                    item.style.background = ''
-                }
-            }
-        }
-      }
-
+      // clear win background
       function clearWinningCircles() {
         const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
             winnerCircleWrapper.classList.replace('z-[100]', 'z-[1]')
@@ -276,7 +253,6 @@ const CompetitionProvider = ({ children }) => {
         // reset timer
         resetTimer()
         // reset board to all blanks
-        clearNonEmptyBackgrounds()
         clearWinningCircles()
         // reset marker
         setMarker('marker5')
@@ -285,11 +261,13 @@ const CompetitionProvider = ({ children }) => {
 
       // play again click
       const playAgain = () => {
+
         const playerBottomCardWrapper = document.getElementById('playerBottomCardWrapper');
         const winCardWrapper = document.getElementById('winCardWrapper');
         // remove the win screen and display the turn and counter screen
         playerBottomCardWrapper.classList.remove('hidden')
         winCardWrapper.classList.add('hidden')
+    
         // determin whos turn it is based on who went first last time
         if (firstTurn === 'Player1') {
             setTurn('Player2')
@@ -301,21 +279,26 @@ const CompetitionProvider = ({ children }) => {
         // set the winner back to null
         setWinner(null)
         setNewGame(true)
-        // clear the current player piece array
-        setPlayerOneArray([])
-        setPlayerTwoArray([])
+        
         // reset the allowed to click array
         setAllowedToClick(['parentCircle-35', 'parentCircle-36', 'parentCircle-37', 'parentCircle-38', 'parentCircle-39', 'parentCircle-40', 'parentCircle-41'])
         // reset timer
         resetTimer()
         // reset board to all blanks
-        clearNonEmptyBackgrounds()
         clearWinningCircles()
         // reset marker
         setMarker('marker5')
         startTimer()
 
       }
+
+      useEffect(() => {
+        if (newGame === true) {
+            let playButton = document.getElementById('playAgainContainer')
+            playButton.classList.add('pointer-events-none', 'opacity-50', 'cursor-not-allowed')
+
+        }
+      },[newGame])
 
       // win logic
       let ways2win = 
@@ -406,8 +389,6 @@ const CompetitionProvider = ({ children }) => {
 
         // set condition here for if playerOneWin is true
         if (playerOneWin) {
-            console.log('player one wins')
-            console.log(playerOneWinningPieces)
             setTimeout(() => {
                 setWinner('Player1')
                 setPlayerOneArray([])
@@ -426,6 +407,11 @@ const CompetitionProvider = ({ children }) => {
                     whiteCircle.classList.add('border-white')
                 })
             }, winDelay*1000)
+
+            setTimeout(() => {
+                let playButton = document.getElementById('playAgainContainer')
+                playButton.classList.remove('pointer-events-none', 'opacity-50', 'cursor-not-allowed')
+            },winDelay*2000)
         }
 
         // Player two or cpu win
@@ -444,8 +430,6 @@ const CompetitionProvider = ({ children }) => {
 
         // set condition here for if playerOneWin is true
         if (playerTwoWin) {
-            console.log('player two wins')
-            console.log(playerTwoWinningPieces)
             setTimeout(() => {
                 setWinner('Player2')
                 setPlayerOneArray([])
@@ -464,6 +448,11 @@ const CompetitionProvider = ({ children }) => {
                     whiteCircle.classList.add('border-white')
                 })
             }, winDelay*1000)
+
+            setTimeout(() => {
+                let playButton = document.getElementById('playAgainContainer')
+                playButton.classList.remove('pointer-events-none', 'opacity-50', 'cursor-not-allowed')
+            },winDelay*2000)
         }
 
         // win annoucement delay
@@ -478,7 +467,8 @@ const CompetitionProvider = ({ children }) => {
         cardBackground, turnText, player1Text, player1Face, player2Text, player2Face, 
         marker, setMarker, columns, playerOneArray, setPlayerOneArray, playerTwoArray, 
         setPlayerTwoArray, allowedToClick, setAllowedToClick, timer, setTimer, startTimer, 
-        resetTimer, pauseTimer, winner, setWinner, restart, playAgain, setPaused, gameOn, setGameOn, rows, winAnnouncement }}>
+        resetTimer, pauseTimer, winner, setWinner, restart, playAgain, setPaused, gameOn, setGameOn, rows, winAnnouncement,
+        newGame, setNewGame }}>
             {children}
         </CompetitionContext.Provider>
     )

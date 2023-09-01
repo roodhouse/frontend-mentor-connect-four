@@ -7,7 +7,7 @@ function CircleContainer({index}) {
 
   const { turn, setTurn, columns, setMarker, playerOneArray, setPlayerOneArray, 
           playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick, 
-          resetTimer, winner, rows, winAnnouncement } = useCompetition()
+          resetTimer, winner, rows, winAnnouncement, newGame, setNewGame } = useCompetition()
   
   const [ circlePosition, setCirclePosition ] = useState(null)
   const [ yAxis, setYaxis ] = useState()
@@ -18,11 +18,18 @@ function CircleContainer({index}) {
     winAnnouncement(duration)
   },[duration])
 
+  
+  useEffect(() => {
+    setPieceBackground('')
+    setCirclePosition(null)
+    setNewGame(false)
+  },[newGame])
+
   const handleClick = (e) => {
 
     const tile = e.target
-    console.log(tile)
     let pieceId = tile.id
+    
     if ( winner === null ) {
       if ( allowedToClick.includes(pieceId)) {
         let pieceArray = (pieceId.split('-'))
