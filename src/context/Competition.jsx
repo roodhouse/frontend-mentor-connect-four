@@ -311,6 +311,25 @@ const CompetitionProvider = ({ children }) => {
         }
       },[newGame])
 
+      useEffect(() => {
+        if ( competition === 'CPU' && newGame === true) {
+            console.log('go')
+            let oldPieces = document.querySelectorAll('.circle')
+            oldPieces.forEach((oldPiece) => {
+                let oldPieceParent = oldPiece.parentElement
+
+                if ( oldPieceParent.firstChild ) {
+                    let oldPieceKid = oldPieceParent.firstChild
+                    if (oldPieceKid.style.background === 'url("./assets/images/counter-yellow-large.svg")') {
+                        console.log(oldPieceKid)
+                        oldPieceParent.removeChild(oldPieceKid)
+
+                    }
+                }
+            })
+        }
+      },[newGame])
+
       // win logic
       let ways2win = 
         {
@@ -400,29 +419,55 @@ const CompetitionProvider = ({ children }) => {
 
         // set condition here for if playerOneWin is true
         if (playerOneWin) {
-            setTimeout(() => {
-                setWinner('Player1')
-                setPlayerOneArray([])
-                setPlayerTwoArray([])
-                stopTimer()
-                let score = playerOneScore + 1
-                setPlayerOneScore(score)
-                
-                const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
-                winnerCircleWrapper.classList.replace('z-[1]', 'z-[100]')
-                const winningCircles = playerOneWinningPieces.map(piece => piece.replace('parent', 'winner'))
+            if ( competition === 'Human' ) {
+                setTimeout(() => {
+                    setWinner('Player1')
+                    setPlayerOneArray([])
+                    setPlayerTwoArray([])
+                    stopTimer()
+                    let score = playerOneScore + 1
+                    setPlayerOneScore(score)
+                    
+                    const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
+                    winnerCircleWrapper.classList.replace('z-[1]', 'z-[100]')
+                    const winningCircles = playerOneWinningPieces.map(piece => piece.replace('parent', 'winner'))
+        
+                    winningCircles.forEach((piece) => {
+                        let whiteCircle = document.getElementById(piece)
+                        whiteCircle.classList.remove('border-transparent')
+                        whiteCircle.classList.add('border-white')
+                    })
+                }, winDelay*1000)
     
-                winningCircles.forEach((piece) => {
-                    let whiteCircle = document.getElementById(piece)
-                    whiteCircle.classList.remove('border-transparent')
-                    whiteCircle.classList.add('border-white')
-                })
-            }, winDelay*1000)
+                setTimeout(() => {
+                    let playButton = document.getElementById('playAgainContainer')
+                    playButton.classList.remove('pointer-events-none', 'opacity-50', 'cursor-not-allowed')
+                },winDelay*2000)
+            } else {
 
-            setTimeout(() => {
-                let playButton = document.getElementById('playAgainContainer')
-                playButton.classList.remove('pointer-events-none', 'opacity-50', 'cursor-not-allowed')
-            },winDelay*2000)
+                setWinner('Player1')
+                    setPlayerOneArray([])
+                    setPlayerTwoArray([])
+                    stopTimer()
+                    let score = playerOneScore + 1
+                    setPlayerOneScore(score)
+                    
+                    const winnerCircleWrapper = document.getElementById('winnerCircleWrapper')
+                    winnerCircleWrapper.classList.replace('z-[1]', 'z-[100]')
+                    const winningCircles = playerOneWinningPieces.map(piece => piece.replace('parent', 'winner'))
+        
+                    winningCircles.forEach((piece) => {
+                        let whiteCircle = document.getElementById(piece)
+                        whiteCircle.classList.remove('border-transparent')
+                        whiteCircle.classList.add('border-white')
+                    })
+
+                    setTimeout(() => {
+                        let playButton = document.getElementById('playAgainContainer')
+                        playButton.classList.remove('pointer-events-none', 'opacity-50', 'cursor-not-allowed')
+                    },2000)
+
+            }
         }
 
         // Player two or cpu win
