@@ -6,8 +6,7 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// bug 5: dbl check height
-    // when quitting the main menu height is off
+// bug 6: on quit, return to game and not everything has been reset as expected..
 
 
 
