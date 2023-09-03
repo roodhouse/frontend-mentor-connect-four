@@ -86,24 +86,16 @@ function CircleContainer({index}) {
           if ( turn === 'Player1' ) {
             if ( window.innerWidth < 768 ) {
               setPieceBackground('url("./assets/images/counter-red-small.svg")')
-              tile.style.backgroundSize = 'contain'
-              tile.style.backgroundRepeat = 'no-repeat'
             } else if ( window.innerWidth >= 768 ) {
               setPieceBackground('url("./assets/images/counter-red-large.svg")')
-              tile.style.backgroundSize = 'contain'
-              tile.style.backgroundRepeat = 'no-repeat'
             }
             setPlayerOneArray([...playerOneArray, tile.id])
             setTurn('Player2')
           } else if ( turn === 'Player2') {
             if ( window.innerWidth < 768 ) {
               setPieceBackground('url("./assets/images/counter-yellow-small.svg")')
-              tile.style.backgroundSize = 'contain'
-              tile.style.backgroundRepeat = 'no-repeat'
             } else if ( window.innerWidth >= 768 ) {
               setPieceBackground('url("./assets/images/counter-yellow-large.svg")')
-              tile.style.backgroundSize = 'contain'
-              tile.style.backgroundRepeat = 'no-repeat'
             }
             setPlayerTwoArray([...playerTwoArray, tile.id])
             setTurn('Player1')
