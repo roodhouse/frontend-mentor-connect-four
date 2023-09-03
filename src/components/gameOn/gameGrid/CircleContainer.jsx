@@ -7,7 +7,7 @@ function CircleContainer({index}) {
 
   const { turn, setTurn, columns, setMarker, playerOneArray, setPlayerOneArray, 
           playerTwoArray, setPlayerTwoArray, allowedToClick, setAllowedToClick, 
-          resetTimer, winner, rows, winAnnouncement, newGame, setNewGame } = useCompetition()
+          resetTimer, winner, rows, winAnnouncement, newGame, setNewGame, competition } = useCompetition()
   
   const [ circlePosition, setCirclePosition ] = useState(null)
   const [ yAxis, setYaxis ] = useState()
@@ -48,34 +48,39 @@ function CircleContainer({index}) {
           
           setCirclePosition({ x: clickX, y: clickY })
 
-          let rowIndex = -1
-              for (const [rowName, rowItems] of Object.entries(rows)) {
-                if (rowItems.includes(pieceId)) {
-                    rowIndex = parseInt(rowName.slice(3), 10)
-                    break;
+          if ( competition === 'CPU' ) {
+            setYaxis(0)
+            setDuration(0)
+          } else {
+            let rowIndex = -1
+                for (const [rowName, rowItems] of Object.entries(rows)) {
+                  if (rowItems.includes(pieceId)) {
+                      rowIndex = parseInt(rowName.slice(3), 10)
+                      break;
+                    }
                   }
-                }
-
-                if (rowIndex === 1 ) {
-                  setYaxis(-500)
-                  setDuration(4)
-                } else if ( rowIndex === 2 ) {
-                  setYaxis(-416)
-                  setDuration(4)
-                }
-                else if ( rowIndex === 3 ) {
-                  setYaxis(-332)
-                  setDuration(4)
-                } else if ( rowIndex === 4 ) {
-                  setYaxis(-248)
-                  setDuration(3)
-                } else if ( rowIndex === 5 ) {
-                  setYaxis(-164)
-                  setDuration(2)
-                } else if ( rowIndex === 6 ) {
-                  setYaxis(-80)
-                  setDuration(2)
-                }
+  
+                  if (rowIndex === 1 ) {
+                    setYaxis(-500)
+                    setDuration(4)
+                  } else if ( rowIndex === 2 ) {
+                    setYaxis(-416)
+                    setDuration(4)
+                  }
+                  else if ( rowIndex === 3 ) {
+                    setYaxis(-332)
+                    setDuration(4)
+                  } else if ( rowIndex === 4 ) {
+                    setYaxis(-248)
+                    setDuration(3)
+                  } else if ( rowIndex === 5 ) {
+                    setYaxis(-164)
+                    setDuration(2)
+                  } else if ( rowIndex === 6 ) {
+                    setYaxis(-80)
+                    setDuration(2)
+                  }
+          }
     
         if ( tile.style.background === '') {
           if ( turn === 'Player1' ) {
