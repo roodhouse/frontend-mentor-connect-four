@@ -6,8 +6,6 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// vs cpu animations...
-  // disable the win delay when playing the cpu
 // bug 5: dbl check height
     // when quitting the main menu height is off
 
