@@ -7,6 +7,8 @@ import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
 // vs cpu animations...
+  // disable animation when playing the cpu
+  // disable the win delay when playing the cpu
 // bug 5: dbl check height
     // when quitting the main menu height is off
 

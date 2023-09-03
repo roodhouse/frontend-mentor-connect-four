@@ -127,15 +127,19 @@ const CompetitionProvider = ({ children }) => {
         
                         let timeout = [1000,2000,3000,4000]
                         let timeoutIndex = Math.floor(Math.random() * timeout.length)
+
                         setTimeout(() => {
                             // change background
                             let randomSelectionDiv = document.getElementById(randomSelection)
+                            let circleDiv  =  document.createElement('div')
+                            circleDiv.classList.add('circle', 'w-[35px]', 'h-[38px]', 'md:w-[70px]', 'md:h-[75px]', 'bg-contain', 'bg-no-repeat')
+                            randomSelectionDiv.appendChild(circleDiv)
                             if ( window.innerWidth < 768 ) {
-                                randomSelectionDiv.style.background = 'url("./assets/images/counter-yellow-small.svg")'
+                                circleDiv.style.background = 'url("./assets/images/counter-yellow-small.svg")'
                                 randomSelectionDiv.style.backgroundSize = 'contain'
                                 randomSelectionDiv.style.backgroundRepeat = 'no-repeat'
                               } else if ( window.innerWidth >= 768 ) {
-                                randomSelectionDiv.style.background = 'url("./assets/images/counter-yellow-large.svg")'
+                                circleDiv.style.background = 'url("./assets/images/counter-yellow-large.svg")'
                                 randomSelectionDiv.style.backgroundSize = 'contain'
                                 randomSelectionDiv.style.backgroundRepeat = 'no-repeat'
                               }
