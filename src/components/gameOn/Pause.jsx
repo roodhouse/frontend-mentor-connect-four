@@ -30,6 +30,7 @@ function Pause() {
     // hide game grid
     document.getElementById('gameOnWrapper').classList.add('hidden')
     document.getElementById('gameOnWrapper').classList.remove('xl:flex', 'xl:flex-col', 'xl:justify-end')
+    document.getElementById('mainContainer').classList.remove('md:h-full', 'xl:h-screen')
     // reset score here
     setPlayerOneScore(0)
     setPlayerTwoCpuScore(0)

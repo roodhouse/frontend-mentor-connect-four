@@ -4,7 +4,7 @@ import VsCPU from './homeScreen/VsCPU'
 import TwoPlayer from './homeScreen/TwoPlayer'
 import GameRules from './homeScreen/GameRules'
 import { useDisplayHome } from '../context/DisplayHome'
-import { useCompetition } from '../context/Competition'
+import { useCompetition } from '../context/Competition' 
 
 function HomeScreen() {
 
