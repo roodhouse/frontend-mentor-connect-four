@@ -6,6 +6,15 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
+
+// quit bug is present still 
+  // only happens in mobile view when playing cpu
+
+
+// animation in moblie view is wrong
+
+// cpu piece in mobile view is off
+
 function App() {
 
   useEffect(() => {
