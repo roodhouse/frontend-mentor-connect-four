@@ -59,26 +59,48 @@ function CircleContainer({index}) {
                       break;
                     }
                   }
-  
-                  if (rowIndex === 1 ) {
-                    setYaxis(-500)
-                    setDuration(4)
-                  } else if ( rowIndex === 2 ) {
-                    setYaxis(-416)
-                    setDuration(4)
-                  }
-                  else if ( rowIndex === 3 ) {
-                    setYaxis(-332)
-                    setDuration(4)
-                  } else if ( rowIndex === 4 ) {
-                    setYaxis(-248)
-                    setDuration(3)
-                  } else if ( rowIndex === 5 ) {
-                    setYaxis(-164)
-                    setDuration(2)
-                  } else if ( rowIndex === 6 ) {
-                    setYaxis(-80)
-                    setDuration(2)
+                  if ( window.innerWidth >= 768 ) { 
+                    if (rowIndex === 1 ) {
+                      setYaxis(-500)
+                      setDuration(4)
+                    } else if ( rowIndex === 2 ) {
+                      setYaxis(-416)
+                      setDuration(4)
+                    }
+                    else if ( rowIndex === 3 ) {
+                      setYaxis(-332)
+                      setDuration(4)
+                    } else if ( rowIndex === 4 ) {
+                      setYaxis(-248)
+                      setDuration(3)
+                    } else if ( rowIndex === 5 ) {
+                      setYaxis(-164)
+                      setDuration(2)
+                    } else if ( rowIndex === 6 ) {
+                      setYaxis(-80)
+                      setDuration(2)
+                    }
+                  } else if ( window.innerWidth < 768 ) {
+                    if (rowIndex === 1 ) {
+                      setYaxis(-270)
+                      setDuration(4)
+                    } else if ( rowIndex === 2 ) {
+                      setYaxis(-210)
+                      setDuration(4)
+                    }
+                    else if ( rowIndex === 3 ) {
+                      setYaxis(-160)
+                      setDuration(4)
+                    } else if ( rowIndex === 4 ) {
+                      setYaxis(-110)
+                      setDuration(3)
+                    } else if ( rowIndex === 5 ) {
+                      setYaxis(-70)
+                      setDuration(2)
+                    } else if ( rowIndex === 6 ) {
+                      setYaxis(-30)
+                      setDuration(2)
+                    }
                   }
           }
     
