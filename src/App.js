@@ -6,9 +6,6 @@ import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
 import GameOn from './components/GameOn';
 
-// animation in moblie view is wrong
-
-
 function App() {
 
   useEffect(() => {
