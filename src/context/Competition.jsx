@@ -132,16 +132,12 @@ const CompetitionProvider = ({ children }) => {
                             // change background
                             let randomSelectionDiv = document.getElementById(randomSelection)
                             let circleDiv  =  document.createElement('div')
-                            circleDiv.classList.add('circle', 'w-[35px]', 'h-[38px]', 'md:w-[70px]', 'md:h-[75px]', 'bg-contain', 'bg-no-repeat')
+                            circleDiv.classList.add('circle', 'w-[35px]', 'h-[38px]', 'md:w-[70px]', 'md:h-[75px]', '!bg-contain', '!bg-no-repeat')
                             randomSelectionDiv.appendChild(circleDiv)
                             if ( window.innerWidth < 768 ) {
                                 circleDiv.style.background = 'url("./assets/images/counter-yellow-small.svg")'
-                                randomSelectionDiv.style.backgroundSize = 'contain'
-                                randomSelectionDiv.style.backgroundRepeat = 'no-repeat'
                               } else if ( window.innerWidth >= 768 ) {
                                 circleDiv.style.background = 'url("./assets/images/counter-yellow-large.svg")'
-                                randomSelectionDiv.style.backgroundSize = 'contain'
-                                randomSelectionDiv.style.backgroundRepeat = 'no-repeat'
                               }
                               // add new item to allowedToClickArray
                               setAllowedToClick(prevAllowedToClick => {
@@ -320,7 +316,7 @@ const CompetitionProvider = ({ children }) => {
 
                 if ( oldPieceParent.firstChild ) {
                     let oldPieceKid = oldPieceParent.firstChild
-                    if (oldPieceKid.style.background === 'url("./assets/images/counter-yellow-large.svg")') {
+                    if (oldPieceKid.style.background === 'url("./assets/images/counter-yellow-large.svg")' || oldPieceKid.style.background === 'url("./assets/images/counter-yellow-small.svg")') {
                         console.log(oldPieceKid)
                         oldPieceParent.removeChild(oldPieceKid)
 
