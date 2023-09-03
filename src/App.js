@@ -8,7 +8,6 @@ import GameOn from './components/GameOn';
 
 // animation in moblie view is wrong
 
-// cpu piece in mobile view is off
 
 function App() {
 
