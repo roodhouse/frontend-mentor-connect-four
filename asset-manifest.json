@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/frontend-mentor-connect-four/static/css/main.37839f1e.css",
+    "main.js": "/frontend-mentor-connect-four/static/js/main.e03c7be0.js",
+    "static/media/blackGrid.svg": "/frontend-mentor-connect-four/static/media/blackGrid.af5c86787eaad117f5ee.svg",
+    "static/media/whiteGrid.svg": "/frontend-mentor-connect-four/static/media/whiteGrid.81d2b9eee7d157ada45b.svg",
+    "static/media/player-vs-player.svg": "/frontend-mentor-connect-four/static/media/player-vs-player.0f4120171bf670fca99a.svg",
+    "static/media/player-vs-cpu.svg": "/frontend-mentor-connect-four/static/media/player-vs-cpu.c864805caf4d283a8c1f.svg",
+    "static/media/logo.svg": "/frontend-mentor-connect-four/static/media/logo.18f406c1e091b7f33f72.svg",
+    "static/media/marker-red.svg": "/frontend-mentor-connect-four/static/media/marker-red.201fc49ae1d8753513ae.svg",
+    "static/media/marker-yellow.svg": "/frontend-mentor-connect-four/static/media/marker-yellow.a8ee5c49c251b26a543f.svg",
+    "static/media/icon-check-hover.svg": "/frontend-mentor-connect-four/static/media/icon-check-hover.bc5594ab80445cd1dc0c.svg",
+    "static/media/icon-check.svg": "/frontend-mentor-connect-four/static/media/icon-check.09edb9dc6d34aac5a1b0.svg",
+    "index.html": "/frontend-mentor-connect-four/index.html",
+    "main.37839f1e.css.map": "/frontend-mentor-connect-four/static/css/main.37839f1e.css.map",
+    "main.e03c7be0.js.map": "/frontend-mentor-connect-four/static/js/main.e03c7be0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37839f1e.css",
+    "static/js/main.e03c7be0.js"
+  ]
+}
