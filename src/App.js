@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { DisplayHomeProvider } from './context/DisplayHome';
-import { CompetitionProvider, useCompetition } from './context/Competition';
+import { CompetitionProvider } from './context/Competition';
 import './App.css';
 import HomeScreen from './components/HomeScreen';
 import RulesScreen from './components/RulesScreen';
