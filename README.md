@@ -29,7 +29,17 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+#### Main screen
+![](./public/assets/images/mainscreen.png)
+
+#### Rules screen
+![](./public/assets/images/rules.png)
+
+#### Vs CPU
+![](./public/assets/images/vscpu.png)
+
+#### Animation
+![](./public/assets/images/animation.png)
 
 ### Links
 
